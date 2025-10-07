@@ -4,13 +4,32 @@ import Image from "next/image"
 import { useTheme } from '../../utils/theme';
 import { login } from './actions'
 import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
+
+function LoginMessages() {
+    const searchParams = useSearchParams();
+    const error = searchParams.get('error');
+    const message = searchParams.get('message');
+
+    return (
+        <>
+            {error && (
+                <div style={{ padding: '10px', marginBottom: '15px', backgroundColor: '#fee', color: '#c00', borderRadius: '5px', border: '1px solid #fcc' }}>
+                    {error}
+                </div>
+            )}
+            {message && (
+                <div style={{ padding: '10px', marginBottom: '15px', backgroundColor: '#efe', color: '#060', borderRadius: '5px', border: '1px solid #cfc' }}>
+                    {message}
+                </div>
+            )}
+        </>
+    );
+}
 
 export default function Login(){
     const { theme, toggleTheme } = useTheme();
     const isDark = theme === 'dark';
-    const searchParams = useSearchParams();
-    const error = searchParams.get('error');
-    const message = searchParams.get('message');
 
     return (    <div className="login-container">
         <div className="login-illustration">
@@ -41,16 +60,9 @@ export default function Login(){
                 <h1>Sign In</h1>
                 <p className="login-subtitle">Enter your credentials to access your account</p>
 
-                {error && (
-                    <div style={{ padding: '10px', marginBottom: '15px', backgroundColor: '#fee', color: '#c00', borderRadius: '5px', border: '1px solid #fcc' }}>
-                        {error}
-                    </div>
-                )}
-                {message && (
-                    <div style={{ padding: '10px', marginBottom: '15px', backgroundColor: '#efe', color: '#060', borderRadius: '5px', border: '1px solid #cfc' }}>
-                        {message}
-                    </div>
-                )}
+                <Suspense fallback={<div></div>}>
+                    <LoginMessages />
+                </Suspense>
 
                 <form className="login-form" action={login}>
                     <div className="form-group">
