@@ -313,6 +313,20 @@ body.dark-mode .theme-toggle:hover {
     border-color: var(--primary-color);
 }
 
+/* Theme toggle icon colors */
+.theme-toggle img {
+    filter: none;
+    transition: filter 0.3s;
+}
+
+body.dark-mode .theme-toggle img[src*="Sun"] {
+    filter: brightness(0) invert(1);
+}
+
+.theme-toggle img[src*="Moon"] {
+    filter: brightness(0) saturate(100%);
+}
+
 .hero {
     padding: 5rem 0;
     background: linear-gradient(135deg, #F0EFFF 0%, #E8F5FF 100%);
@@ -383,7 +397,7 @@ body.dark-mode .theme-toggle:hover {
     color: var(--white);
 }
 
-.hero-illustration svg {
+.hero-illustration img {
     width: 100%;
     height: auto;
 }
@@ -454,7 +468,7 @@ body.dark-mode .theme-toggle:hover {
     align-items: center;
 }
 
-.about-illustration svg {
+.about-illustration img {
     width: 100%;
     height: auto;
 }
@@ -576,7 +590,7 @@ body.dark-mode .theme-toggle:hover {
     overflow: hidden;
 }
 
-.login-illustration svg {
+.login-illustration img {
     width: 100%;
     height: 100%;
 }
@@ -1086,7 +1100,7 @@ body.dark-mode .theme-toggle:hover {
     border-radius: 0 4px 4px 0;
 }
 
-.nav-item svg {
+.nav-item img {
     width: 20px;
     height: 20px;
 }
@@ -1644,11 +1658,11 @@ body.dark-mode .theme-toggle:hover {
     box-shadow: var(--shadow-md);
 }
 
-.action-btn svg {
+.action-btn img {
     transition: transform 0.3s;
 }
 
-.action-btn:hover svg {
+.action-btn:hover img {
     transform: scale(1.1);
 }
 

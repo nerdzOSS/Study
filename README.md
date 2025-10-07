@@ -1,6 +1,14 @@
-# 📚 StudyHub - Student Learning Platform
+# 📚 NerdZ - Student Learning Platform
 
 A modern, minimalistic student learning platform with beautiful UI/UX design. Built with pure HTML and CSS, featuring responsive design and smooth animations.
+
+## 🚀 Getting Started
+```sh
+git clone https://github.com/cybemachine/Study/tree/main
+cd nerdz
+npm install 
+npm run dev
+```
 
 ## ✨ Features
 
@@ -63,118 +71,6 @@ A modern, minimalistic student learning platform with beautiful UI/UX design. Bu
 - Card lift animations
 - Feature card staggered floating
 
-## 📁 File Structure
-
-```
-Study/
-│
-├── index.html          # Landing page
-├── login.html          # Login/Sign-in page
-├── student.html        # Student dashboard
-├── styles.css          # All styles and animations
-└── README.md          # Documentation
-```
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Any modern web browser (Chrome, Firefox, Safari, Edge)
-- No server required - runs on static HTML/CSS
-
-### Installation
-
-1. **Download/Clone** the project files
-   ```
-   All files should be in the same directory
-   ```
-
-2. **Open in Browser**
-   - Double-click on `index.html` to open the landing page
-   - Or right-click → "Open with" → Choose your browser
-
-3. **Navigate the Site**
-   - Click "Get Started Free" or "Login" to go to login page
-   - From landing page, you can navigate to `student.html` manually
-   - Dashboard navigation is ready for JavaScript integration
-
-## 🎯 Usage
-
-### For Development
-The project is structured for easy JavaScript integration:
-
-- **Data Attributes**: Elements have proper classes and IDs
-- **Form Elements**: Ready for validation and submission handling
-- **Navigation Items**: Have `data-page` attributes for routing
-- **Interactive Elements**: Buttons, links, and cards ready for event listeners
-- **Chart Bars**: Have `data-value` attributes for dynamic updates
-
-### Responsive Breakpoints
-- **Desktop**: Full layout (1024px+)
-- **Tablet**: Adjusted sidebar and grid (768px - 1024px)
-- **Mobile**: Stacked layout, hidden sidebar (< 768px)
-
-## 🔧 Customization
-
-### Colors
-Edit CSS variables in `styles.css`:
-```css
-:root {
-    --primary-color: #A8D8EA;
-    --secondary-color: #FFE9A0;
-    --accent-pink: #FFCCE1;
-    /* ... more colors */
-}
-```
-
-### Animations
-Adjust animation durations in the `@keyframes` section:
-```css
-@keyframes float {
-    /* Modify timing and movement */
-}
-```
-
-### Content
-- Replace placeholder text in HTML files
-- Update course names, assignments, and statistics
-- Modify navigation items and links
-
-## 🌟 Key Components
-
-### Landing Page
-- Navbar with logo and navigation links
-- Hero section with CTA buttons
-- 6 feature cards with icons
-- About section with statistics
-- Footer with links
-
-### Login Page
-- Animated SVG illustration
-- Email and password inputs
-- Remember me checkbox
-- Social login button
-- Responsive form layout
-
-### Dashboard
-- Fixed sidebar with navigation
-- Header with search and notifications
-- 4 stats cards
-- Grid layout with 6 sections:
-  - Courses (progress tracking)
-  - Assignments (priority system)
-  - Calendar (event markers)
-  - Quick Actions
-  - Recent Activity
-  - Progress Chart
-
-## 📱 Responsive Design
-
-- **Mobile-First Approach**
-- **Flexible Grid System**
-- **Collapsible Sidebar** on mobile
-- **Hidden Elements** for smaller screens
-- **Touch-Friendly** buttons and links
-- **Optimized Typography** for all devices
 
 ## 🎓 Future Enhancements (JavaScript Integration)
 
@@ -194,17 +90,6 @@ Ready for these features:
 - [ ] Real-time updates
 - [ ] User profile editing
 
-## 🛠️ Technologies Used
-
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling
-  - Flexbox
-  - CSS Grid
-  - CSS Variables
-  - Animations & Transitions
-  - Media Queries
-- **SVG** - Scalable illustrations and icons
-
 ## 📊 Browser Support
 
 - ✅ Chrome (latest)
@@ -213,21 +98,11 @@ Ready for these features:
 - ✅ Edge (latest)
 - ⚠️ IE11 (limited support)
 
-## 🎨 Design Principles
-
-- **Minimalistic** - Clean and uncluttered interface
-- **Modern** - Contemporary design patterns
-- **Accessible** - Proper contrast and readable fonts
-- **Intuitive** - Easy navigation and clear hierarchy
-- **Responsive** - Works on all device sizes
-- **Animated** - Smooth, purposeful animations
-
 ## 📝 License
 
 Free to use for personal and educational projects.
 
 ## 👨‍💻 Author
-
 Created with ❤️ for students
 
 ## 🤝 Contributing
