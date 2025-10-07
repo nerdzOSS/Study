@@ -3,9 +3,15 @@
 A modern, minimalistic student learning platform with beautiful UI/UX design. Built with pure HTML and CSS, featuring responsive design and smooth animations.
 
 ## 🚀 Getting Started
+clone the repo
 ```sh
 git clone https://github.com/cybemachine/Study/tree/main
 cd nerdz
+```
+then change the supabase NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_PUBLIC_KEY in env.example file
+and then run the following code
+```sh
+cp env.example .env
 npm install 
 npm run dev
 ```

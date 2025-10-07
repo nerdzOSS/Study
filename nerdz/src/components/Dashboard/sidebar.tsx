@@ -1,4 +1,9 @@
-export function SideBar(){
+'use client';
+
+import { logout } from '@/app/login/actions';
+import type { User } from '@supabase/supabase-js';
+
+export function SideBar({ user }: { user: User }){
 return (    <aside className="sidebar">
     <div className="sidebar-header">
         <div className="logo">
@@ -53,7 +58,7 @@ return (    <aside className="sidebar">
         <a href="#" className="nav-item" data-page="grades">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <circle cx="10" cy="10" r="7" stroke="currentColor" strokeWidth="1.5"/>
-                <path d="M10 6 L10 10 L13 13" stroke="currentColor" strokeWidth="1.5" stroke-linecap="round"/>
+                <path d="M10 6 L10 10 L13 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
             </svg>
             <span>Grades</span>
         </a>
@@ -62,8 +67,8 @@ return (    <aside className="sidebar">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <rect x="3" y="4" width="14" height="13" rx="2" stroke="currentColor" strokeWidth="1.5"/>
                 <line x1="3" y1="8" x2="17" y2="8" stroke="currentColor" strokeWidth="1.5"/>
-                <line x1="7" y1="2" x2="7" y2="6" stroke="currentColor" strokeWidth="1.5" stroke-linecap="round"/>
-                <line x1="13" y1="2" x2="13" y2="6" stroke="currentColor" strokeWidth="1.5" stroke-linecap="round"/>
+                <line x1="7" y1="2" x2="7" y2="6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <line x1="13" y1="2" x2="13" y2="6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
             </svg>
             <span>Calendar</span>
         </a>
@@ -89,18 +94,18 @@ return (    <aside className="sidebar">
                 </svg>
             </div>
             <div className="user-info">
-                <h4>Student Name</h4>
-                <p>student@email.com</p>
+                <h4>{user.user_metadata?.full_name || 'Student'}</h4>
+                <p>{user.email}</p>
             </div>
         </div>
-        <a href="/" className="btn-logout">
+        <button onClick={() => logout()} className="btn-logout" type="button">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M7 2 L2 2 L2 16 L7 16" stroke="currentColor" strokeWidth="1.5" stroke-linecap="round"/>
-                <path d="M12 13 L16 9 L12 5" stroke="currentColor" strokeWidth="1.5" stroke-linecap="round"/>
-                <line x1="16" y1="9" x2="7" y2="9" stroke="currentColor" strokeWidth="1.5" stroke-linecap="round"/>
+                <path d="M7 2 L2 2 L2 16 L7 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <path d="M12 13 L16 9 L12 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <line x1="16" y1="9" x2="7" y2="9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
             </svg>
             Logout
-        </a>
+        </button>
     </div>
 </aside>)
 }
