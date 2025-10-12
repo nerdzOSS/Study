@@ -1,0 +1,24 @@
+/* Fix Horizontal Scrolling */
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+}
+
+.hero,
+.features,
+.user-types,
+.cta-section {
+    overflow: hidden;
+}
+
+/* Ensure all sections don't cause horizontal scroll */
+section {
+    max-width: 100%;
+    overflow-x: hidden;
+}

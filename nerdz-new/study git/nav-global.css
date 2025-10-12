@@ -1,0 +1,120 @@
+/* Global Navigation Enhancements */
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    padding-top: 85px !important;
+    overflow-x: hidden !important;
+    width: 100%;
+    position: relative;
+}
+
+body.nav-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Fade in animation for cards */
+.fade-in {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Active nav link styling */
+.nav-links a.active {
+    color: var(--accent-purple) !important;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Mobile navigation improvements */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px !important;
+    }
+
+    nav.nav-scrolled {
+        padding: 0.8rem 4%;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        max-width: 85vw;
+        height: 100vh;
+        background: var(--bg-secondary);
+        backdrop-filter: blur(20px);
+        border-left: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 6rem 2rem 2rem;
+        gap: 1.5rem;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .theme-toggle {
+        margin-top: 1rem;
+    }
+
+    .hamburger {
+        display: flex !important;
+        z-index: 1001;
+    }
+
+    /* Overlay when menu is open */
+    .nav-links.active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: -1;
+    }
+}
+
+/* Ensure hamburger is hidden on desktop */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none !important;
+    }
+}

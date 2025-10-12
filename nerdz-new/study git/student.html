@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Learning Platform - NerdZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="student.css">
+    <link rel="shortcut icon" href="img/logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="NerdZ Logo" class="logo">
+            <span class="brand-name">NerdZ</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">🏠 Home</a>
+            <a href="student-dashboard.html">📊 Dashboard</a>
+            <button class="nav-menu-item" data-section="class-selection">🎯 Select Class</button>
+            <button class="nav-menu-item" data-section="study-materials">📖 Study Materials</button>
+            <button class="nav-menu-item" data-section="video-lectures">🎥 Video Lectures</button>
+            <button class="nav-menu-item" data-section="ai-assistant">🤖 AI Assistant</button>
+            <button class="nav-menu-item" data-section="quiz">📝 AI Quiz</button>
+            <button class="nav-menu-item" data-section="schedule">📅 My Schedule</button>
+            <button class="nav-menu-item" data-section="pomodoro">⏱️ Pomodoro Timer</button>
+            <button class="nav-menu-item" data-section="notes">✍️ My Notes</button>
+            <button class="nav-menu-item" data-section="progress">📈 Progress</button>
+            <a href="settings.html">⚙️ Settings</a>
+            <button class="theme-toggle" id="themeToggle">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="student-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>📚 Learning Hub</h3>
+                <button class="sidebar-close" id="sidebarClose">✕</button>
+            </div>
+            <div class="sidebar-menu">
+                <button class="menu-item active" data-section="class-selection">
+                    <span class="menu-icon">🎯</span>
+                    <span>Select Class</span>
+                </button>
+                <button class="menu-item" data-section="study-materials">
+                    <span class="menu-icon">📖</span>
+                    <span>Study Materials</span>
+                </button>
+                <button class="menu-item" data-section="video-lectures">
+                    <span class="menu-icon">🎥</span>
+                    <span>Video Lectures</span>
+                </button>
+                <button class="menu-item" data-section="ai-assistant">
+                    <span class="menu-icon">🤖</span>
+                    <span>AI Assistant</span>
+                </button>
+                <button class="menu-item" data-section="quiz">
+                    <span class="menu-icon">📝</span>
+                    <span>AI Quiz</span>
+                </button>
+                <button class="menu-item" data-section="schedule">
+                    <span class="menu-icon">📅</span>
+                    <span>My Schedule</span>
+                </button>
+                <button class="menu-item" data-section="pomodoro">
+                    <span class="menu-icon">⏱️</span>
+                    <span>Pomodoro Timer</span>
+                </button>
+                <button class="menu-item" data-section="notes">
+                    <span class="menu-icon">✍️</span>
+                    <span>My Notes</span>
+                </button>
+                <button class="menu-item" data-section="progress">
+                    <span class="menu-icon">📈</span>
+                    <span>Progress</span>
+                </button>
+            </div>
+        </aside>
+
+      
+
+        <main class="main-content">
+            <section class="content-section active" id="class-selection">
+                <div class="section-header">
+                    <h1>Select Your Class</h1>
+                    <p>Choose your class to get personalized content</p>
+                </div>
+                <div class="class-grid">
+                    <div class="class-card" data-class="6">
+                        <div class="class-number">6</div>
+                        <h3>Class 6</h3>
+                        <p>Middle School Foundation</p>
+                    </div>
+                    <div class="class-card" data-class="7">
+                        <div class="class-number">7</div>
+                        <h3>Class 7</h3>
+                        <p>Building Core Concepts</p>
+                    </div>
+                    <div class="class-card" data-class="8">
+                        <div class="class-number">8</div>
+                        <h3>Class 8</h3>
+                        <p>Advanced Learning</p>
+                    </div>
+                    <div class="class-card" data-class="9">
+                        <div class="class-number">9</div>
+                        <h3>Class 9</h3>
+                        <p>Secondary Foundation</p>
+                    </div>
+                    <div class="class-card" data-class="10">
+                        <div class="class-number">10</div>
+                        <h3>Class 10</h3>
+                        <p>Board Exam Prep</p>
+                    </div>
+                    <div class="class-card" data-class="11">
+                        <div class="class-number">11</div>
+                        <h3>Class 11</h3>
+                        <p>Senior Secondary</p>
+                    </div>
+                    <div class="class-card" data-class="12">
+                        <div class="class-number">12</div>
+                        <h3>Class 12</h3>
+                        <p>Final Year Excellence</p>
+                    </div>
+                    <div class="class-card" data-class="college">
+                        <div class="class-number">🎓</div>
+                        <h3>College</h3>
+                        <p>Higher Education</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="study-materials">
+                <div class="section-header">
+                    <h1>📖 Study Materials</h1>
+                    <p id="classInfo">Select a class to view materials</p>
+                </div>
+                <div class="materials-filter">
+                    <button class="filter-btn active" data-subject="all">All Subjects</button>
+                    <button class="filter-btn" data-subject="mathematics">Mathematics</button>
+                    <button class="filter-btn" data-subject="science">Science</button>
+                    <button class="filter-btn" data-subject="english">English</button>
+                    <button class="filter-btn" data-subject="social">Social Studies</button>
+                </div>
+                <div class="materials-grid" id="materialsGrid">
+                    <div class="material-card" data-subject="mathematics">
+                        <div class="material-icon">📐</div>
+                        <h3>Algebra Basics</h3>
+                        <p>Complete guide to algebraic expressions</p>
+                        <div class="material-meta">
+                            <span>📄 25 pages</span>
+                            <span>⏱️ 2 hrs</span>
+                        </div>
+                        <button class="btn-download">Download PDF</button>
+                    </div>
+                    <div class="material-card" data-subject="science">
+                        <div class="material-icon">🔬</div>
+                        <h3>Chemical Reactions</h3>
+                        <p>Understanding chemical equations</p>
+                        <div class="material-meta">
+                            <span>📄 30 pages</span>
+                            <span>⏱️ 3 hrs</span>
+                        </div>
+                        <button class="btn-download">Download PDF</button>
+                    </div>
+                    <div class="material-card" data-subject="english">
+                        <div class="material-icon">📚</div>
+                        <h3>Grammar Essentials</h3>
+                        <p>Master English grammar rules</p>
+                        <div class="material-meta">
+                            <span>📄 20 pages</span>
+                            <span>⏱️ 1.5 hrs</span>
+                        </div>
+                        <button class="btn-download">Download PDF</button>
+                    </div>
+                    <div class="material-card" data-subject="social">
+                        <div class="material-icon">🌍</div>
+                        <h3>World History</h3>
+                        <p>Important historical events</p>
+                        <div class="material-meta">
+                            <span>📄 35 pages</span>
+                            <span>⏱️ 4 hrs</span>
+                        </div>
+                        <button class="btn-download">Download PDF</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="video-lectures">
+                <div class="section-header">
+                    <h1>🎥 Video Lectures</h1>
+                    <p>Learn from expert teachers</p>
+                </div>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <div class="play-button">▶</div>
+                            <span class="video-duration">15:30</span>
+                        </div>
+                        <div class="video-info">
+                            <h3>Introduction to Quadratic Equations</h3>
+                            <p class="video-teacher">Prof. Sharma</p>
+                            <div class="video-meta">
+                                <span>👁️ 1.2k views</span>
+                                <span>⭐ 4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <div class="play-button">▶</div>
+                            <span class="video-duration">20:15</span>
+                        </div>
+                        <div class="video-info">
+                            <h3>Periodic Table Explained</h3>
+                            <p class="video-teacher">Dr. Verma</p>
+                            <div class="video-meta">
+                                <span>👁️ 2.5k views</span>
+                                <span>⭐ 4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <div class="play-button">▶</div>
+                            <span class="video-duration">18:45</span>
+                        </div>
+                        <div class="video-info">
+                            <h3>English Grammar - Tenses</h3>
+                            <p class="video-teacher">Ms. Gupta</p>
+                            <div class="video-meta">
+                                <span>👁️ 980 views</span>
+                                <span>⭐ 4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="ai-assistant">
+                <div class="section-header">
+                    <h1>🤖 AI Study Assistant</h1>
+                    <p>Get instant help with your doubts</p>
+                </div>
+                <div class="ai-chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-message ai-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <p>Hello! I'm your AI study assistant. Ask me anything about your subjects, homework, or concepts you're struggling with!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chatInput" placeholder="Ask your question..." />
+                        <button id="chatSend">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="quick-questions">
+                        <button class="quick-q">Explain photosynthesis</button>
+                        <button class="quick-q">What is Pythagoras theorem?</button>
+                        <button class="quick-q">Types of chemical reactions</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="quiz">
+                <div class="section-header">
+                    <h1>📝 AI-Powered Quiz</h1>
+                    <p>Test your knowledge with smart questions</p>
+                </div>
+                <div class="quiz-setup" id="quizSetup">
+                    <div class="quiz-options">
+                        <div class="quiz-option-group">
+                            <label>Select Subject</label>
+                            <select id="quizSubject">
+                                <option value="mathematics">Mathematics</option>
+                                <option value="science">Science</option>
+                                <option value="english">English</option>
+                                <option value="social">Social Studies</option>
+                            </select>
+                        </div>
+                        <div class="quiz-option-group">
+                            <label>Number of Questions</label>
+                            <select id="quizQuestions">
+                                <option value="5">5 Questions</option>
+                                <option value="10">10 Questions</option>
+                                <option value="15">15 Questions</option>
+                                <option value="20">20 Questions</option>
+                            </select>
+                        </div>
+                        <div class="quiz-option-group">
+                            <label>Difficulty Level</label>
+                            <select id="quizDifficulty">
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-start-quiz" id="startQuiz">Start Quiz</button>
+                </div>
+                <div class="quiz-container hidden" id="quizContainer">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="quizProgress"></div>
+                        </div>
+                        <span id="questionCounter">Question 1 of 10</span>
+                    </div>
+                    <div class="quiz-question" id="quizQuestion"></div>
+                    <div class="quiz-options" id="quizOptions"></div>
+                    <button class="btn-next" id="nextQuestion">Next Question</button>
+                </div>
+                <div class="quiz-results hidden" id="quizResults">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="result-score" id="resultScore"></div>
+                    <div class="result-feedback" id="resultFeedback"></div>
+                    <button class="btn-retry" id="retryQuiz">Take Another Quiz</button>
+                </div>
+            </section>
+
+            <section class="content-section" id="schedule">
+                <div class="section-header">
+                    <h1>📅 My Study Schedule</h1>
+                    <p>Plan your study sessions effectively</p>
+                </div>
+                <div class="schedule-container">
+                    <div class="schedule-calendar">
+                        <div class="calendar-header">
+                            <button id="prevWeek">‹</button>
+                            <h3 id="currentWeek">This Week</h3>
+                            <button id="nextWeek">›</button>
+                        </div>
+                        <div class="week-days" id="weekDays">
+                            <div class="day-column">
+                                <div class="day-header">Mon</div>
+                                <div class="day-tasks"></div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">Tue</div>
+                                <div class="day-tasks"></div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">Wed</div>
+                                <div class="day-tasks"></div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">Thu</div>
+                                <div class="day-tasks"></div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">Fri</div>
+                                <div class="day-tasks"></div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">Sat</div>
+                                <div class="day-tasks"></div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">Sun</div>
+                                <div class="day-tasks"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-task-section">
+                        <h3>Add Study Task</h3>
+                        <input type="text" id="taskTitle" placeholder="Task title" />
+                        <select id="taskDay">
+                            <option value="0">Monday</option>
+                            <option value="1">Tuesday</option>
+                            <option value="2">Wednesday</option>
+                            <option value="3">Thursday</option>
+                            <option value="4">Friday</option>
+                            <option value="5">Saturday</option>
+                            <option value="6">Sunday</option>
+                        </select>
+                        <input type="time" id="taskTime" />
+                        <select id="taskSubject">
+                            <option value="mathematics">Mathematics</option>
+                            <option value="science">Science</option>
+                            <option value="english">English</option>
+                            <option value="social">Social Studies</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <button id="addTask">Add Task</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="pomodoro">
+                <div class="section-header">
+                    <h1>⏱️ Pomodoro Timer</h1>
+                    <p>Stay focused with the Pomodoro technique</p>
+                </div>
+                <div class="pomodoro-container">
+                    <div class="pomodoro-settings">
+                        <div class="setting-item">
+                            <label>Focus Duration (min)</label>
+                            <input type="number" id="focusDuration" value="25" min="1" max="60" />
+                        </div>
+                        <div class="setting-item">
+                            <label>Short Break (min)</label>
+                            <input type="number" id="shortBreak" value="5" min="1" max="15" />
+                        </div>
+                        <div class="setting-item">
+                            <label>Long Break (min)</label>
+                            <input type="number" id="longBreak" value="15" min="5" max="30" />
+                        </div>
+                        <div class="setting-item">
+                            <label>Sessions until long break</label>
+                            <input type="number" id="sessionsCount" value="4" min="1" max="10" />
+                        </div>
+                    </div>
+                    <div class="pomodoro-display">
+                        <div class="timer-circle">
+                            <svg class="timer-svg">
+                                <circle class="timer-bg" cx="150" cy="150" r="140"></circle>
+                                <circle class="timer-progress" cx="150" cy="150" r="140" id="timerCircle"></circle>
+                            </svg>
+                            <div class="timer-content">
+                                <div class="timer-mode" id="timerMode">Focus Time</div>
+                                <div class="timer-time" id="timerDisplay">25:00</div>
+                                <div class="timer-session">Session <span id="currentSession">1</span> of <span id="totalSessions">4</span></div>
+                            </div>
+                        </div>
+                        <div class="timer-controls">
+                            <button class="timer-btn" id="startTimer">Start</button>
+                            <button class="timer-btn" id="pauseTimer">Pause</button>
+                            <button class="timer-btn" id="resetTimer">Reset</button>
+                        </div>
+                        <div class="pomodoro-stats">
+                            <div class="stat-box">
+                                <div class="stat-value" id="completedSessions">0</div>
+                                <div class="stat-label">Completed</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value" id="totalFocusTime">0h</div>
+                                <div class="stat-label">Total Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="notes">
+                <div class="section-header">
+                    <h1>✍️ My Notes</h1>
+                    <p>Create and organize your study notes</p>
+                </div>
+                <div class="notes-container">
+                    <div class="notes-sidebar">
+                        <button class="btn-new-note" id="newNote">+ New Note</button>
+                        <div class="notes-list" id="notesList">
+                            <div class="note-item active" data-note="1">
+                                <h4>Physics - Chapter 5</h4>
+                                <p class="note-date">Today, 2:30 PM</p>
+                            </div>
+                            <div class="note-item" data-note="2">
+                                <h4>Math Formulas</h4>
+                                <p class="note-date">Yesterday</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notes-editor">
+                        <input type="text" id="noteTitle" placeholder="Note title..." />
+                        <textarea id="noteContent" placeholder="Start typing your notes..."></textarea>
+                        <div class="note-tools">
+                            <button class="tool-btn" title="Bold">B</button>
+                            <button class="tool-btn" title="Italic">I</button>
+                            <button class="tool-btn" title="Heading">H</button>
+                            <button class="tool-btn" title="List">≡</button>
+                        </div>
+                        <button class="btn-save-note" id="saveNote">Save Note</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="progress">
+                <div class="section-header">
+                    <h1>📈 My Progress</h1>
+                    <p>Track your learning journey</p>
+                </div>
+                <div class="progress-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-info">
+                            <h3 id="studyStreak">0</h3>
+                            <p>Day Streak</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-info">
+                            <h3 id="totalStudyTime">0h</h3>
+                            <p>Total Study Time</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-info">
+                            <h3 id="completedQuizzes">0</h3>
+                            <p>Quizzes Completed</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-info">
+                            <h3 id="avgScore">0%</h3>
+                            <p>Average Score</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-charts">
+                    <div class="chart-container">
+                        <h3>Weekly Study Hours</h3>
+                        <div class="bar-chart" id="weeklyChart">
+                            <div class="chart-bar" style="height: 60%"><span>4h</span></div>
+                            <div class="chart-bar" style="height: 80%"><span>5h</span></div>
+                            <div class="chart-bar" style="height: 40%"><span>3h</span></div>
+                            <div class="chart-bar" style="height: 90%"><span>6h</span></div>
+                            <div class="chart-bar" style="height: 70%"><span>4.5h</span></div>
+                            <div class="chart-bar" style="height: 50%"><span>3.5h</span></div>
+                            <div class="chart-bar" style="height: 30%"><span>2h</span></div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                        </div>
+                    </div>
+                    <div class="achievements">
+                        <h3>Recent Achievements</h3>
+                        <div class="achievement-list">
+                            <div class="achievement-item">
+                                <span class="achievement-badge">🏆</span>
+                                <div>
+                                    <h4>First Week Complete</h4>
+                                    <p>Studied for 7 consecutive days</p>
+                                </div>
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-badge">⭐</span>
+                                <div>
+                                    <h4>Quiz Master</h4>
+                                    <p>Scored 100% in a quiz</p>
+                                </div>
+                            </div>
+                            <div class="achievement-item locked">
+                                <span class="achievement-badge">🔒</span>
+                                <div>
+                                    <h4>30 Day Streak</h4>
+                                    <p>Study for 30 days straight</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="student.js"></script>
+</body>
+</html>

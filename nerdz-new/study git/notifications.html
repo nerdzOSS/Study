@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - NerdZ</title>
+    <script src="auth-check.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav-global.css">
+    <link rel="stylesheet" href="notifications.css">
+    <link rel="shortcut icon" href="img/logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="NerdZ Logo" class="logo">
+            <span class="brand-name">NerdZ</span>
+        </div>
+        <div class="nav-links">
+         
+            
+           
+            <button class="theme-toggle" id="themeToggle">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <main class="notifications-container">
+        <section class="notifications-header">
+            <div class="header-content">
+                <h1 class="page-title">Notifications <span class="gradient-text">Center</span></h1>
+                <p class="page-subtitle">Stay updated with all your activities</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary" id="markAllRead">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Mark all read
+                </button>
+                <button class="btn btn-secondary" id="clearAll">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                    </svg>
+                    Clear all
+                </button>
+            </div>
+        </section>
+
+        <section class="notifications-tabs">
+            <button class="tab-btn active" data-filter="all">
+                <span>All</span>
+                <span class="tab-count">12</span>
+            </button>
+            <button class="tab-btn" data-filter="unread">
+                <span>Unread</span>
+                <span class="tab-count new">5</span>
+            </button>
+            <button class="tab-btn" data-filter="assignments">
+                <span>Assignments</span>
+                <span class="tab-count">4</span>
+            </button>
+            <button class="tab-btn" data-filter="grades">
+                <span>Grades</span>
+                <span class="tab-count">3</span>
+            </button>
+            <button class="tab-btn" data-filter="announcements">
+                <span>Announcements</span>
+                <span class="tab-count">5</span>
+            </button>
+        </section>
+
+        <section class="notifications-list" id="notificationsList">
+            <div class="notification-item unread" data-type="assignments" data-id="1">
+                <div class="notification-indicator"></div>
+                <div class="notification-icon assignment">📝</div>
+                <div class="notification-content">
+                    <h3>New Assignment: Math Calculus</h3>
+                    <p>Prof. Johnson has posted a new assignment for Chapter 5. Due date: Tomorrow at 11:59 PM</p>
+                    <div class="notification-meta">
+                        <span class="notification-time">5 minutes ago</span>
+                        <span class="notification-category">Assignment</span>
+                    </div>
+                </div>
+                <div class="notification-actions">
+                    <button class="action-btn primary" data-action="view">View</button>
+                    <button class="action-btn" data-action="dismiss">Dismiss</button>
+                </div>
+            </div>
+
+            <div class="notification-item unread" data-type="grades" data-id="2">
+                <div class="notification-indicator"></div>
+                <div class="notification-icon grade">📊</div>
+                <div class="notification-content">
+                    <h3>Grade Updated: Physics Lab Report</h3>
+                    <p>You scored 88% on your Thermodynamics Lab Report. Great work!</p>
+                    <div class="notification-meta">
+                        <span class="notification-time">1 hour ago</span>
+                        <span class="notification-category">Grade</span>
+                    </div>
+                </div>
+                <div class="notification-actions">
+                    <button class="action-btn primary" data-action="view">View Details</button>
+                    <button class="action-btn" data-action="dismiss">Dismiss</button>
+                </div>
+            </div>
+
+            <div class="notification-item unread" data-type="announcements" data-id="3">
+                <div class="notification-indicator"></div>
+                <div class="notification-icon announcement">📢</div>
+                <div class="notification-content">
+                    <h3>Class Schedule Change</h3>
+                    <p>Computer Science class has been moved from Room 101 to Lab 5 for tomorrow's session.</p>
+                    <div class="notification-meta">
+                        <span class="notification-time">3 hours ago</span>
+                        <span class="notification-category">Announcement</span>
+                    </div>
+                </div>
+                <div class="notification-actions">
+                    <button class="action-btn primary" data-action="view">View</button>
+                    <button class="action-btn" data-action="dismiss">Dismiss</button>
+                </div>
+            </div>
+
+            <div class="notification-item" data-type="assignments" data-id="4">
+                <div class="notification-indicator"></div>
+                <div class="notification-icon assignment">📝</div>
+                <div class="notification-content">
+                    <h3>Assignment Submitted Successfully</h3>
+                    <p>Your CS Project submission has been received. You'll be notified once it's graded.</p>
+                    <div class="notification-meta">
+                        <span class="notification-time">Yesterday</span>
+                        <span class="notification-category">Assignment</span>
+                    </div>
+                </div>
+                <div class="notification-actions">
+                    <button class="action-btn" data-action="dismiss">Dismiss</button>
+                </div>
+            </div>
+
+            <div class="notification-item unread" data-type="grades" data-id="5">
+                <div class="notification-indicator"></div>
+                <div class="notification-icon grade">📊</div>
+                <div class="notification-content">
+                    <h3>New Grade Posted: Math Quiz #5</h3>
+                    <p>Your score: 95%. Excellent performance! You're in the top 10% of the class.</p>
+                    <div class="notification-meta">
+                        <span class="notification-time">6 hours ago</span>
+                        <span class="notification-category">Grade</span>
+                    </div>
+                </div>
+                <div class="notification-actions">
+                    <button class="action-btn primary" data-action="view">View Details</button>
+                    <button class="action-btn" data-action="dismiss">Dismiss</button>
+                </div>
+            </div>
+
+            <div class="notification-item" data-type="announcements" data-id="6">
+                <div class="notification-indicator"></div>
+                <div class="notification-icon announcement">📢</div>
+                <div class="notification-content">
+                    <h3>Study Materials Available</h3>
+                    <p>Prof. Smith has uploaded new study materials for Physics Module 3.</p>
+                    <div class="notification-meta">
+                        <span class="notification-time">2 days ago</span>
+                        <span class="notification-category">Announcement</span>
+                    </div>
+                </div>
+                <div class="notification-actions">
+                    <button class="action-btn" data-action="dismiss">Dismiss</button>
+                </div>
+            </div>
+
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <div class="empty-icon">🔔</div>
+                <h3>No notifications</h3>
+                <p>You're all caught up! Check back later for updates.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="notifications.js"></script>
+</body>
+</html>

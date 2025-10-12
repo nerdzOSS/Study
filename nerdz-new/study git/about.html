@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NerdZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="phone-mockup.css">
+    <link rel="stylesheet" href="fix-overflow.css">
+        <link rel="shortcut icon" href="img/logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="NerdZ Logo" class="logo">
+            <span class="brand-name">NerdZ</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="about.html">About</a>
+        
+            <button class="theme-toggle" id="themeToggle">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                Our Story
+            </div>
+            <h1 class="hero-title">
+                Making Education<br>
+                <span class="gradient-text">Accessible to All</span>
+            </h1>
+            <p class="hero-description">
+                NerdZ was created by students, for students. We believe learning should be engaging, accessible, and free for everyone.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="features">
+        <div class="section-header">
+            <h2 class="section-title">Our Mission & Vision</h2>
+            <p class="section-subtitle">What drives us every day</p>
+        </div>
+        <div class="user-cards">
+            <div class="user-card student-card">
+                <div class="user-card-header">
+                    <div class="user-icon">🎯</div>
+                    <h3>Our Mission</h3>
+                </div>
+                <p class="feature-description">
+                    To provide students worldwide with a free, comprehensive study platform that makes learning enjoyable, 
+                    organized, and effective. We're committed to democratizing education through technology.
+                </p>
+            </div>
+
+            <div class="user-card teacher-card">
+                <div class="user-card-header">
+                    <div class="user-icon">🚀</div>
+                    <h3>Our Vision</h3>
+                </div>
+                <p class="feature-description">
+                    To become the world's most loved study platform, empowering millions of students to achieve their 
+                    academic goals and unlock their full potential through innovative, accessible tools.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="features">
+        <div class="section-header">
+            <h2 class="section-title">NerdZ by the Numbers</h2>
+            <p class="section-subtitle">Our growing community</p>
+        </div>
+        <div class="hero-stats" style="justify-content: center;">
+            <div class="stat">
+                <span class="stat-number">1000+</span>
+                <span class="stat-label">Active Students</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Expert Teachers</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">10k+</span>
+                <span class="stat-label">Study Hours</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Satisfaction Rate</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="features">
+        <div class="section-header">
+            <h2 class="section-title">Why Choose NerdZ</h2>
+            <p class="section-subtitle">What makes us different</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💯</div>
+                <h3 class="feature-title">100% Free</h3>
+                <p class="feature-description">No hidden fees, no subscriptions, no paywalls. Quality education should be accessible to everyone.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔓</div>
+                <h3 class="feature-title">Open Source</h3>
+                <p class="feature-description">Built by the community, for the community. Transparent, secure, and continuously improving.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3 class="feature-title">Student-Focused</h3>
+                <p class="feature-description">Designed with actual student needs in mind. Every feature solves a real problem.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Privacy First</h3>
+                <p class="feature-description">Your data belongs to you. We never sell your information or compromise your privacy.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Fast & Reliable</h3>
+                <p class="feature-description">Lightning-fast performance, 99.9% uptime, and reliable infrastructure you can count on.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3 class="feature-title">Global Community</h3>
+                <p class="feature-description">Connect with students worldwide. Share knowledge, collaborate, and grow together.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Join Our Growing Community</h2>
+            <p class="cta-description">Be part of the education revolution</p>
+            <div class="cta-buttons">
+                <a href="login.html" class="btn btn-primary btn-large">
+                    <span>Get Started Free</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <img src="img/logo.jpeg" alt="NerdZ Logo" class="logo">
+                    <span class="brand-name">NerdZ</span>
+                </div>
+                <p class="footer-description">Making study easier and more engaging for students worldwide.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <a href="features.html">Features</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="help-center.html">Help Center</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="help-center.html">Documentation</a>
+                <a href="help-center.html">Help Center</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NerdZ. Open Source & Free Forever.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - NerdZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="settings.css">
+        <link rel="shortcut icon" href="img/logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="NerdZ Logo" class="logo">
+            <span class="brand-name">NerdZ</span>
+        </div>
+        <div class="nav-links">
+            <a href="student-dashboard.html">Dashboard</a>
+            <!-- <a href="#">Students</a>
+            <a href="#">Tests & Quizzes</a>
+            <a href="#" class="active">Settings</a> -->
+            <button class="theme-toggle" id="themeToggle">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="settings-container">
+        <!-- Sidebar Navigation -->
+        <aside class="settings-sidebar">
+            <nav class="settings-nav">
+                <button class="settings-nav-item active" data-section="profile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Profile</span>
+                </button>
+                <button class="settings-nav-item" data-section="account">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>Account</span>
+                </button>
+                <button class="settings-nav-item" data-section="notifications">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span>Notifications</span>
+                </button>
+                <button class="settings-nav-item" data-section="appearance">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <span>Appearance</span>
+                </button>
+                <button class="settings-nav-item" data-section="privacy">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <span>Privacy & Security</span>
+                </button>
+                <button class="settings-nav-item" data-section="preferences">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 1v6m0 6v6"></path>
+                    </svg>
+                    <span>Preferences</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Settings Content -->
+        <div class="settings-content">
+            <!-- Profile Section -->
+            <section class="settings-section active" id="profile">
+                <div class="section-header">
+                    <h2 class="section-title">Profile Settings</h2>
+                    <p class="section-subtitle">Manage your public profile information</p>
+                </div>
+
+                <div class="settings-card">
+                    <div class="profile-photo-section">
+                        <div class="profile-photo">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&size=200&background=6366f1&color=fff" alt="Profile">
+                        </div>
+                        <div class="photo-actions">
+                            <button class="btn btn-primary">Change Photo</button>
+                            <button class="btn btn-secondary">Remove</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3 class="card-title">Personal Information</h3>
+                    <form class="settings-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" value="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" value="Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Display Name</label>
+                            <input type="text" value="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Bio</label>
+                            <textarea rows="3" placeholder="Tell us about yourself...">Physics and Mathematics Teacher with 10+ years of experience</textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" value="+1 (555) 123-4567">
+                            </div>
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" value="1985-05-15">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Location</label>
+                            <input type="text" value="New York, USA">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Account Section -->
+            <section class="settings-section" id="account">
+                <div class="section-header">
+                    <h2 class="section-title">Account Settings</h2>
+                    <p class="section-subtitle">Manage your account credentials and settings</p>
+                </div>
+
+                <div class="settings-card">
+                    <h3 class="card-title">Email Address</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label>Current Email</label>
+                            <input type="email" value="john.doe@example.com" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>New Email</label>
+                            <input type="email" placeholder="Enter new email address">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Update Email</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="settings-card">
+                    <h3 class="card-title">Change Password</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label>Current Password</label>
+                            <input type="password" placeholder="Enter current password" required>
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" placeholder="Enter new password" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm New Password</label>
+                            <input type="password" placeholder="Confirm new password" required>
+                        </div>
+                        <div class="password-requirements">
+                            <p>Password must contain:</p>
+                            <ul>
+                                <li>At least 8 characters</li>
+                                <li>One uppercase letter</li>
+                                <li>One lowercase letter</li>
+                                <li>One number</li>
+                                <li>One special character</li>
+                            </ul>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Change Password</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="settings-card danger-zone">
+                    <h3 class="card-title">Danger Zone</h3>
+                    <div class="danger-actions">
+                        <div class="danger-item">
+                            <div>
+                                <h4>Deactivate Account</h4>
+                                <p>Temporarily disable your account. You can reactivate it anytime.</p>
+                            </div>
+                            <button class="btn btn-danger">Deactivate</button>
+                        </div>
+                        <div class="danger-item">
+                            <div>
+                                <h4>Delete Account</h4>
+                                <p>Permanently delete your account and all data. This cannot be undone.</p>
+                            </div>
+                            <button class="btn btn-danger">Delete Account</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notifications Section -->
+            <section class="settings-section" id="notifications">
+                <div class="section-header">
+                    <h2 class="section-title">Notification Preferences</h2>
+                    <p class="section-subtitle">Control how you receive notifications</p>
+                </div>
+
+                <div class="settings-card">
+                    <h3 class="card-title">Email Notifications</h3>
+                    <div class="toggle-list">
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>New Student Submissions</h4>
+                                <p>Get notified when students submit tests or assignments</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>Upcoming Tests Reminder</h4>
+                                <p>Receive reminders about scheduled tests and quizzes</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>Student Messages</h4>
+                                <p>Get emails when students send you messages</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>Weekly Summary</h4>
+                                <p>Receive a weekly report of your teaching activities</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3 class="card-title">Push Notifications</h3>
+                    <div class="toggle-list">
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>Enable Push Notifications</h4>
+                                <p>Receive notifications in your browser</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>Sound</h4>
+                                <p>Play a sound when you receive a notification</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appearance Section -->
+            <section class="settings-section" id="appearance">
+                <div class="section-header">
+                    <h2 class="section-title">Appearance</h2>
+                    <p class="section-subtitle">Customize how NerdZ looks for you</p>
+                </div>
+
+                <div class="settings-card">
+                    <h3 class="card-title">Theme</h3>
+                    <div class="theme-selector">
+                        <div class="theme-option" data-theme="dark">
+                            <div class="theme-preview dark-preview">
+                                <div class="preview-header"></div>
+                                <div class="preview-content">
+                                    <div class="preview-sidebar"></div>
+                                    <div class="preview-main">
+                                        <div class="preview-line"></div>
+                                        <div class="preview-line short"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="theme-info">
+                                <h4>Dark</h4>
+                                <p>Dark mode theme</p>
+                            </div>
+                        </div>
+                        <div class="theme-option active" data-theme="light">
+                            <div class="theme-preview light-preview">
+                                <div class="preview-header"></div>
+                                <div class="preview-content">
+                                    <div class="preview-sidebar"></div>
+                                    <div class="preview-main">
+                                        <div class="preview-line"></div>
+                                        <div class="preview-line short"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="theme-info">
+                                <h4>Light</h4>
+                                <p>Light mode theme</p>
+                            </div>
+                        </div>
+                        <div class="theme-option" data-theme="auto">
+                            <div class="theme-preview auto-preview">
+                                <div class="preview-header"></div>
+                                <div class="preview-content">
+                                    <div class="preview-sidebar"></div>
+                                    <div class="preview-main">
+                                        <div class="preview-line"></div>
+                                        <div class="preview-line short"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="theme-info">
+                                <h4>Auto</h4>
+                                <p>System preference</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3 class="card-title">Display Options</h3>
+                    <div class="toggle-list">
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>Compact Mode</h4>
+                                <p>Reduce spacing and make UI more compact</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>Animations</h4>
+                                <p>Enable smooth animations and transitions</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Privacy Section -->
+            <section class="settings-section" id="privacy">
+                <div class="section-header">
+                    <h2 class="section-title">Privacy & Security</h2>
+                    <p class="section-subtitle">Manage your privacy and security settings</p>
+                </div>
+
+                <div class="settings-card">
+                    <h3 class="card-title">Two-Factor Authentication</h3>
+                    <div class="two-factor-status">
+                        <div class="status-badge disabled">Disabled</div>
+                        <p>Add an extra layer of security to your account</p>
+                    </div>
+                    <button class="btn btn-primary">Enable 2FA</button>
+                </div>
+
+                <div class="settings-card">
+                    <h3 class="card-title">Privacy Settings</h3>
+                    <div class="toggle-list">
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>Profile Visibility</h4>
+                                <p>Allow students to view your profile</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>Show Online Status</h4>
+                                <p>Let students see when you're online</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-item">
+                            <div class="toggle-info">
+                                <h4>Activity Status</h4>
+                                <p>Share your activity status with others</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-card">
+                    <h3 class="card-title">Active Sessions</h3>
+                    <div class="sessions-list">
+                        <div class="session-item">
+                            <div class="session-icon">💻</div>
+                            <div class="session-details">
+                                <h4>Windows - Chrome</h4>
+                                <p>New York, USA • Active now</p>
+                            </div>
+                            <span class="current-badge">Current</span>
+                        </div>
+                        <div class="session-item">
+                            <div class="session-icon">📱</div>
+                            <div class="session-details">
+                                <h4>iPhone - Safari</h4>
+                                <p>New York, USA • 2 days ago</p>
+                            </div>
+                            <button class="btn btn-secondary btn-sm">Revoke</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preferences Section -->
+            <section class="settings-section" id="preferences">
+                <div class="section-header">
+                    <h2 class="section-title">Preferences</h2>
+                    <p class="section-subtitle">Customize your teaching experience</p>
+                </div>
+
+                <div class="settings-card">
+                    <h3 class="card-title">Language & Region</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label>Language</label>
+                            <select>
+                                <option>English (US)</option>
+                                <option>English (UK)</option>
+                                <option>Spanish</option>
+                                <option>French</option>
+                                <option>German</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Timezone</label>
+                                <select>
+                                    <option>EST - Eastern Time</option>
+                                    <option>PST - Pacific Time</option>
+                                    <option>CST - Central Time</option>
+                                    <option>MST - Mountain Time</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Date Format</label>
+                                <select>
+                                    <option>MM/DD/YYYY</option>
+                                    <option>DD/MM/YYYY</option>
+                                    <option>YYYY-MM-DD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="settings-card">
+                    <h3 class="card-title">Default Settings</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label>Default Test Duration</label>
+                            <select>
+                                <option>30 minutes</option>
+                                <option selected>45 minutes</option>
+                                <option>60 minutes</option>
+                                <option>90 minutes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Grade Scale</label>
+                            <select>
+                                <option>Percentage (0-100%)</option>
+                                <option>Letter Grade (A-F)</option>
+                                <option>GPA (0-4.0)</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+        }
+
+        // Hamburger Menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Settings Navigation
+        const settingsNavItems = document.querySelectorAll('.settings-nav-item');
+        const settingsSections = document.querySelectorAll('.settings-section');
+
+        settingsNavItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const section = item.dataset.section;
+                
+                // Update active nav item
+                settingsNavItems.forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
+                
+                // Show corresponding section
+                settingsSections.forEach(sec => sec.classList.remove('active'));
+                document.getElementById(section).classList.add('active');
+            });
+        });
+
+        // Theme Selector
+        const themeOptions = document.querySelectorAll('.theme-option');
+        themeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                themeOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                
+                const theme = option.dataset.theme;
+                if (theme === 'dark') {
+                    document.body.classList.remove('light-mode');
+                } else if (theme === 'light') {
+                    document.body.classList.add('light-mode');
+                }
+                localStorage.setItem('theme', theme);
+            });
+        });
+
+        // Form Submissions
+        const settingsForms = document.querySelectorAll('.settings-form');
+        settingsForms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                console.log('Settings saved!');
+                alert('Settings saved successfully!');
+            });
+        });
+    </script>
+</body>
+</html>

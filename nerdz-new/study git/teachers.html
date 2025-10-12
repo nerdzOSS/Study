@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Teacher - NerdZ</title>
+    <script src="auth-check.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="teachers.css">
+    <link rel="shortcut icon" href="img/logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="NerdZ Logo" class="logo">
+            <span class="brand-name">NerdZ</span>
+        </div>
+        <div class="nav-links">
+            <!-- <a href="teachers.html" class="active">Dashboard</a> -->
+            <a href="settings.html">Settings</a>
+            <button class="theme-toggle" id="themeToggle">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <main class="content-teacher-container">
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <h1 class="page-title">Content <span class="gradient-text">Dashboard</span></h1>
+                <p class="page-subtitle">Upload and manage study materials for students</p>
+                <div class="teacher-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span>Content Provider</span>
+                </div>
+            </div>
+            <div class="quick-actions">
+                <button class="btn btn-primary" id="uploadNoteBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    Upload Notes
+                </button>
+                <button class="btn btn-secondary" id="uploadMaterialBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                        <polyline points="13 2 13 9 20 9"></polyline>
+                    </svg>
+                    Upload Material
+                </button>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card purple-stat">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <span class="stat-label">Total Uploads</span>
+                        <span class="stat-value">42</span>
+                        <span class="stat-trend positive">↑ 8 this week</span>
+                    </div>
+                    <div class="stat-icon-wrapper">
+                        <div class="stat-icon">📚</div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat-card blue-stat">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <span class="stat-label">Total Views</span>
+                        <span class="stat-value">1,248</span>
+                        <span class="stat-trend positive">↑ 124 today</span>
+                    </div>
+                    <div class="stat-icon-wrapper">
+                        <div class="stat-icon">👁️</div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat-card green-stat">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <span class="stat-label">Total Downloads</span>
+                        <span class="stat-value">856</span>
+                        <span class="stat-trend positive">↑ 67 this week</span>
+                    </div>
+                    <div class="stat-icon-wrapper">
+                        <div class="stat-icon">⬇️</div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat-card pink-stat">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <span class="stat-label">Active Students</span>
+                        <span class="stat-value">156</span>
+                        <span class="stat-trend">Across 4 classes</span>
+                    </div>
+                    <div class="stat-icon-wrapper">
+                        <div class="stat-icon">🎓</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-tabs">
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="all">
+                    <span class="tab-icon">📁</span>
+                    <span class="tab-text">All Content</span>
+                    <span class="tab-count">42</span>
+                </button>
+                <button class="tab-btn" data-tab="notes">
+                    <span class="tab-icon">📝</span>
+                    <span class="tab-text">Notes</span>
+                    <span class="tab-count">28</span>
+                </button>
+                <button class="tab-btn" data-tab="materials">
+                    <span class="tab-icon">📚</span>
+                    <span class="tab-text">Materials</span>
+                    <span class="tab-count">14</span>
+                </button>
+            </div>
+            <div class="search-filter">
+                <div class="search-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" placeholder="Search content..." id="searchInput">
+                </div>
+                <select class="filter-select" id="filterSelect">
+                    <option value="all">All Subjects</option>
+                    <option value="physics">Physics</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="biology">Biology</option>
+                    <option value="computer">Computer Science</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="content-grid" id="contentGrid">
+            <div class="content-card" data-type="notes" data-subject="physics">
+                <div class="content-card-header">
+                    <div class="file-type-badge notes-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                        Notes
+                    </div>
+                    <div class="dropdown">
+                        <button class="menu-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="12" cy="5" r="1"></circle>
+                                <circle cx="12" cy="19" r="1"></circle>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                                Edit
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Download
+                            </a>
+                            <a href="#" class="dropdown-item danger">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                                Delete
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-card-body">
+                    <div class="file-icon">📄</div>
+                    <h3 class="content-title">Thermodynamics Chapter Notes</h3>
+                    <p class="content-description">Complete notes for chapters 5-7 covering heat transfer and entropy</p>
+                    <div class="content-meta">
+                        <span class="subject-tag">Physics</span>
+                        <span class="class-tag">Class 12-A</span>
+                    </div>
+                    <div class="content-stats">
+                        <div class="stat-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <span>245 views</span>
+                        </div>
+                        <div class="stat-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span>89 downloads</span>
+                        </div>
+                    </div>
+                    <div class="upload-info">
+                        <span class="upload-date">Uploaded 3 days ago</span>
+                        <span class="file-size">2.4 MB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card" data-type="materials" data-subject="mathematics">
+                <div class="content-card-header">
+                    <div class="file-type-badge material-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                        Material
+                    </div>
+                    <div class="dropdown">
+                        <button class="menu-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="12" cy="5" r="1"></circle>
+                                <circle cx="12" cy="19" r="1"></circle>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                                Edit
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Download
+                            </a>
+                            <a href="#" class="dropdown-item danger">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                                Delete
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-card-body">
+                    <div class="file-icon">📊</div>
+                    <h3 class="content-title">Calculus Practice Problems</h3>
+                    <p class="content-description">200+ solved problems with step-by-step solutions</p>
+                    <div class="content-meta">
+                        <span class="subject-tag">Mathematics</span>
+                        <span class="class-tag">Class 12-B</span>
+                    </div>
+                    <div class="content-stats">
+                        <div class="stat-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <span>412 views</span>
+                        </div>
+                        <div class="stat-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span>156 downloads</span>
+                        </div>
+                    </div>
+                    <div class="upload-info">
+                        <span class="upload-date">Uploaded 1 week ago</span>
+                        <span class="file-size">5.8 MB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card" data-type="notes" data-subject="chemistry">
+                <div class="content-card-header">
+                    <div class="file-type-badge notes-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                        Notes
+                    </div>
+                    <div class="dropdown">
+                        <button class="menu-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="12" cy="5" r="1"></circle>
+                                <circle cx="12" cy="19" r="1"></circle>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                                Edit
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Download
+                            </a>
+                            <a href="#" class="dropdown-item danger">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                                Delete
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-card-body">
+                    <div class="file-icon">🧪</div>
+                    <h3 class="content-title">Organic Chemistry Reactions</h3>
+                    <p class="content-description">Key reactions and mechanisms with examples</p>
+                    <div class="content-meta">
+                        <span class="subject-tag">Chemistry</span>
+                        <span class="class-tag">Class 11-A</span>
+                    </div>
+                    <div class="content-stats">
+                        <div class="stat-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <span>198 views</span>
+                        </div>
+                        <div class="stat-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span>72 downloads</span>
+                        </div>
+                    </div>
+                    <div class="upload-info">
+                        <span class="upload-date">Uploaded 2 days ago</span>
+                        <span class="file-size">1.9 MB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <div class="empty-icon">📂</div>
+                <h3>No content found</h3>
+                <p>Start uploading notes and study materials for your students</p>
+                <button class="btn btn-primary" id="uploadFromEmpty">Upload Content</button>
+            </div>
+        </section>
+
+        <section class="restrictions-notice">
+            <div class="notice-card">
+                <div class="notice-icon">ℹ️</div>
+                <div class="notice-content">
+                    <h4>Account Permissions</h4>
+                    <p>As a Content Provider, you can upload and manage study materials and notes. For test creation and scheduling features, please contact the administrator.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <div class="modal-overlay" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📤 Upload Content</h2>
+                <button class="close-modal" id="closeUploadModal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <form class="modal-form" id="uploadForm">
+                <div class="form-section">
+                    <h3 class="form-section-title">Content Details</h3>
+                    <div class="form-group">
+                        <label>Content Type <span class="required">*</span></label>
+                        <select required id="contentType">
+                            <option value="">Select Type</option>
+                            <option value="notes">Notes</option>
+                            <option value="material">Study Material</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Title <span class="required">*</span></label>
+                        <input type="text" placeholder="e.g., Thermodynamics Chapter Notes" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea rows="3" placeholder="Brief description of the content..."></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Subject <span class="required">*</span></label>
+                            <select required>
+                                <option value="">Select Subject</option>
+                                <option>Physics</option>
+                                <option>Mathematics</option>
+                                <option>Chemistry</option>
+                                <option>Biology</option>
+                                <option>Computer Science</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Class <span class="required">*</span></label>
+                            <select required>
+                                <option value="">Select Class</option>
+                                <option>Class 12-A</option>
+                                <option>Class 12-B</option>
+                                <option>Class 11-A</option>
+                                <option>Class 11-B</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="form-section-title">Upload File</h3>
+                    <div class="upload-area" id="uploadArea">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <h4>Drop files here or click to browse</h4>
+                        <p>Supported formats: PDF, DOC, DOCX, PPT, PPTX (Max 50MB)</p>
+                        <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.ppt,.pptx" hidden>
+                        <button type="button" class="btn btn-secondary" id="browseBtn">Browse Files</button>
+                    </div>
+                    <div class="file-preview" id="filePreview" style="display: none;">
+                        <div class="file-info">
+                            <div class="file-icon-preview">📄</div>
+                            <div class="file-details">
+                                <span class="file-name" id="fileName"></span>
+                                <span class="file-size" id="fileSize"></span>
+                            </div>
+                        </div>
+                        <button type="button" class="remove-file" id="removeFile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelUploadBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitUploadBtn">
+                        <span class="btn-text">Upload Content</span>
+                        <span class="btn-loader" style="display: none;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" stroke-opacity="0.3"></circle>
+                                <path d="M12 2 A10 10 0 0 1 22 12" class="spinner"></path>
+                            </svg>
+                            Uploading...
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const contentCards = document.querySelectorAll('.content-card');
+        const emptyState = document.getElementById('emptyState');
+        const searchInput = document.getElementById('searchInput');
+        const filterSelect = document.getElementById('filterSelect');
+        const uploadNoteBtn = document.getElementById('uploadNoteBtn');
+        const uploadMaterialBtn = document.getElementById('uploadMaterialBtn');
+        const uploadModal = document.getElementById('uploadModal');
+        const closeUploadModal = document.getElementById('closeUploadModal');
+        const cancelUploadBtn = document.getElementById('cancelUploadBtn');
+        const uploadForm = document.getElementById('uploadForm');
+        const uploadArea = document.getElementById('uploadArea');
+        const browseBtn = document.getElementById('browseBtn');
+        const fileInput = document.getElementById('fileInput');
+        const filePreview = document.getElementById('filePreview');
+        const removeFile = document.getElementById('removeFile');
+        const toastContainer = document.getElementById('toastContainer');
+
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.innerHTML = `
+                <div class="toast-icon">${type === 'success' ? '✅' : type === 'error' ? '❌' : '⚠️'}</div>
+                <div class="toast-message">${message}</div>
+            `;
+            toastContainer.appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('show'), 100);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-mode');
+        }
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filterContent();
+            });
+        });
+
+        searchInput.addEventListener('input', filterContent);
+        filterSelect.addEventListener('change', filterContent);
+
+        function filterContent() {
+            const activeTab = document.querySelector('.tab-btn.active').dataset.tab;
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedSubject = filterSelect.value;
+
+            let visibleCount = 0;
+
+            contentCards.forEach(card => {
+                const type = card.dataset.type;
+                const subject = card.dataset.subject;
+                const title = card.querySelector('.content-title').textContent.toLowerCase();
+                const description = card.querySelector('.content-description').textContent.toLowerCase();
+
+                const matchesTab = activeTab === 'all' || type === activeTab;
+                const matchesSearch = !searchTerm || title.includes(searchTerm) || description.includes(searchTerm);
+                const matchesSubject = selectedSubject === 'all' || subject === selectedSubject;
+
+                if (matchesTab && matchesSearch && matchesSubject) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            emptyState.style.display = visibleCount === 0 ? 'flex' : 'none';
+        }
+
+        document.querySelectorAll('.menu-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const dropdown = btn.parentElement;
+                document.querySelectorAll('.dropdown').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('active');
+                });
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+        });
+
+        function openUploadModal(type) {
+            uploadModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            if (type) {
+                document.getElementById('contentType').value = type;
+            }
+        }
+
+        function closeModal() {
+            uploadModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            uploadForm.reset();
+            filePreview.style.display = 'none';
+            uploadArea.style.display = 'flex';
+        }
+
+        uploadNoteBtn.addEventListener('click', () => openUploadModal('notes'));
+        uploadMaterialBtn.addEventListener('click', () => openUploadModal('material'));
+        document.getElementById('uploadFromEmpty')?.addEventListener('click', () => openUploadModal());
+        closeUploadModal.addEventListener('click', closeModal);
+        cancelUploadBtn.addEventListener('click', closeModal);
+
+        uploadModal.addEventListener('click', (e) => {
+            if (e.target === uploadModal) closeModal();
+        });
+
+        browseBtn.addEventListener('click', () => fileInput.click());
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('drag-over');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('drag-over');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('drag-over');
+            const files = e.dataTransfer.files;
+            if (files.length) handleFile(files[0]);
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length) handleFile(e.target.files[0]);
+        });
+
+        function handleFile(file) {
+            const maxSize = 50 * 1024 * 1024;
+            const allowedTypes = [
+                'application/pdf',
+                'application/msword',
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                'application/vnd.ms-powerpoint',
+                'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+            ];
+            
+            if (file.size > maxSize) {
+                showToast('File size exceeds 50MB limit', 'error');
+                return;
+            }
+            
+            if (!allowedTypes.includes(file.type)) {
+                showToast('Invalid file type. Please upload PDF, DOC, DOCX, PPT, or PPTX files', 'error');
+                return;
+            }
+            
+            const fileName = file.name;
+            const fileSize = (file.size / 1024 / 1024).toFixed(2) + ' MB';
+            
+            document.getElementById('fileName').textContent = fileName;
+            document.getElementById('fileSize').textContent = fileSize;
+            
+            uploadArea.style.display = 'none';
+            filePreview.style.display = 'flex';
+        }
+
+        removeFile.addEventListener('click', () => {
+            fileInput.value = '';
+            filePreview.style.display = 'none';
+            uploadArea.style.display = 'flex';
+        });
+
+        uploadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(uploadForm);
+            const contentType = document.getElementById('contentType').value;
+            const title = uploadForm.querySelector('input[type="text"]').value;
+            const submitBtn = document.getElementById('submitUploadBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoader = submitBtn.querySelector('.btn-loader');
+            
+            if (!fileInput.files.length) {
+                showToast('Please select a file to upload', 'warning');
+                return;
+            }
+            
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'flex';
+            submitBtn.disabled = true;
+            
+            console.log('Uploading:', {
+                type: contentType,
+                title: title,
+                file: fileInput.files[0].name
+            });
+            
+            setTimeout(() => {
+                closeModal();
+                btnText.style.display = 'block';
+                btnLoader.style.display = 'none';
+                submitBtn.disabled = false;
+                showToast('Content uploaded successfully!', 'success');
+                
+                const statsValue = document.querySelector('.purple-stat .stat-value');
+                if (statsValue) {
+                    const currentValue = parseInt(statsValue.textContent);
+                    statsValue.textContent = currentValue + 1;
+                }
+            }, 1500);
+        });
+
+        uploadArea.addEventListener('click', (e) => {
+            if (!e.target.closest('.btn')) {
+                fileInput.click();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && uploadModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const action = item.textContent.trim();
+                
+                if (action === 'Delete' || action === 'Discard') {
+                    if (confirm('Are you sure you want to delete this content?')) {
+                        const card = item.closest('.content-card');
+                        card.style.animation = 'slideOutDown 0.3s ease-out';
+                        setTimeout(() => {
+                            card.remove();
+                            filterContent();
+                            showToast('Content deleted successfully', 'success');
+                        }, 300);
+                    }
+                } else if (action === 'Download') {
+                    showToast('Downloading file...', 'success');
+                } else if (action === 'Edit') {
+                    openUploadModal();
+                }
+            });
+        });
+
+        let lastScroll = 0;
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.classList.add('nav-hidden');
+            } else {
+                nav.classList.remove('nav-hidden');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - NerdZ</title>
+    <script src="auth-check.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="student.css">
+    <link rel="stylesheet" href="student-dashboard.css">
+    <link rel="shortcut icon" href="img/logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="NerdZ Logo" class="logo">
+            <span class="brand-name">NerdZ</span>
+        </div>
+        <div class="nav-links">
+            <a href="student.html">📊 Study</a>
+            <button class="nav-menu-item" data-section="class-selection">🎯 Select Class</button>
+            <button class="nav-menu-item" data-section="study-materials">📖 Study Materials</button>
+            <button class="nav-menu-item" data-section="video-lectures">🎥 Video Lectures</button>
+            <button class="nav-menu-item" data-section="ai-assistant">🤖 AI Assistant</button>
+            <button class="nav-menu-item" data-section="quiz">📝 AI Quiz</button>
+            <button class="nav-menu-item" data-section="schedule">📅 My Schedule</button>
+            <button class="nav-menu-item" data-section="pomodoro">⏱️ Pomodoro Timer</button>
+            <button class="nav-menu-item" data-section="notes">✍️ My Notes</button>
+            <button class="nav-menu-item" data-section="progress">📈 Progress</button>
+            <a href="settings.html">⚙️ Settings</a>
+            <button class="theme-toggle" id="themeToggle">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="student-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>📚 Learning Hub</h3>
+                <button class="sidebar-close" id="sidebarClose">✕</button>
+            </div>
+            <div class="sidebar-menu">
+                <button class="menu-item active" data-section="study">
+                    <span class="menu-icon">📊</span>
+                    <span>Study</span>
+                </button>
+                <button class="menu-item" data-section="class-selection">
+                    <span class="menu-icon">🎯</span>
+                    <span>Select Class</span>
+                </button>
+                <button class="menu-item" data-section="study-materials">
+                    <span class="menu-icon">📖</span>
+                    <span>Study Materials</span>
+                </button>
+                <button class="menu-item" data-section="video-lectures">
+                    <span class="menu-icon">🎥</span>
+                    <span>Video Lectures</span>
+                </button>
+                <button class="menu-item" data-section="ai-assistant">
+                    <span class="menu-icon">🤖</span>
+                    <span>AI Assistant</span>
+                </button>
+                <button class="menu-item" data-section="quiz">
+                    <span class="menu-icon">📝</span>
+                    <span>AI Quiz</span>
+                </button>
+                <button class="menu-item" data-section="schedule">
+                    <span class="menu-icon">📅</span>
+                    <span>My Schedule</span>
+                </button>
+                <button class="menu-item" data-section="pomodoro">
+                    <span class="menu-icon">⏱️</span>
+                    <span>Pomodoro Timer</span>
+                </button>
+                <button class="menu-item" data-section="notes">
+                    <span class="menu-icon">✍️</span>
+                    <span>My Notes</span>
+                </button>
+                <button class="menu-item" data-section="progress">
+                    <span class="menu-icon">📈</span>
+                    <span>Progress</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="content-section active" id="dashboard">
+            <!-- Top Header -->
+            <div class="main-header">
+                <div class="header-left">
+                    <h1 class="dashboard-title">Good Morning, <span class="gradient-text user-name">Student</span>! 👋</h1>
+                    <p class="dashboard-subtitle">Ready to make today productive?</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <button class="theme-toggle-btn" id="themeToggle">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <button class="notification-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-dot"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card purple">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-info">
+                        <span class="stat-value">15 Days</span>
+                        <span class="stat-label">Study Streak</span>
+                    </div>
+                    <div class="stat-trend positive">+2 days</div>
+                </div>
+                <div class="stat-card blue">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-info">
+                        <span class="stat-value">4.5h</span>
+                        <span class="stat-label">Today's Time</span>
+                    </div>
+                    <div class="stat-trend positive">+30min</div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <span class="stat-value">8/10</span>
+                        <span class="stat-label">Tasks Done</span>
+                    </div>
+                    <div class="stat-trend neutral">2 left</div>
+                </div>
+                <div class="stat-card pink">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-info">
+                        <span class="stat-value">92%</span>
+                        <span class="stat-label">Avg Score</span>
+                    </div>
+                    <div class="stat-trend positive">+5%</div>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="content-grid">
+                <!-- Schedule Card -->
+                <div class="content-card schedule-card">
+                    <div class="card-header">
+                        <h3>📅 Today's Schedule</h3>
+                        <span class="card-badge">3 classes</span>
+                    </div>
+                    <div class="schedule-list">
+                        <div class="schedule-item ongoing">
+                            <div class="time-badge ongoing">Now</div>
+                            <div class="schedule-content">
+                                <div class="schedule-time">09:00 AM - 10:30 AM</div>
+                                <h4>Mathematics - Calculus</h4>
+                                <p>Room 204 • Prof. Johnson</p>
+                                <div class="schedule-progress">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="schedule-item upcoming">
+                            <div class="time-badge">11:00 AM</div>
+                            <div class="schedule-content">
+                                <div class="schedule-time">11:00 AM - 01:00 PM</div>
+                                <h4>Physics Lab</h4>
+                                <p>Lab 3 • Prof. Smith</p>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="time-badge">02:00 PM</div>
+                            <div class="schedule-content">
+                                <div class="schedule-time">02:00 PM - 03:00 PM</div>
+                                <h4>Computer Science</h4>
+                                <p>Room 101 • Prof. Davis</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="card-action-btn">View Full Schedule →</button>
+                </div>
+
+                <!-- Assignments Card -->
+                <div class="content-card assignments-card">
+                    <div class="card-header">
+                        <h3>⚡ Urgent Assignments</h3>
+                        <span class="card-badge urgent">5 pending</span>
+                    </div>
+                    <div class="assignments-list">
+                        <div class="assignment-item critical">
+                            <div class="assignment-priority"></div>
+                            <div class="assignment-content">
+                                <h4>Math Assignment #5</h4>
+                                <p>Calculus problems 1-20</p>
+                                <div class="assignment-footer">
+                                    <span class="due-time">⏰ 6 hours left</span>
+                                    <span class="points">50 pts</span>
+                                </div>
+                            </div>
+                            <button class="assignment-btn">Start</button>
+                        </div>
+                        <div class="assignment-item warning">
+                            <div class="assignment-priority"></div>
+                            <div class="assignment-content">
+                                <h4>Physics Lab Report</h4>
+                                <p>Thermodynamics experiment</p>
+                                <div class="assignment-footer">
+                                    <span class="due-time">⏰ Due tomorrow</span>
+                                    <span class="points">100 pts</span>
+                                </div>
+                            </div>
+                            <button class="assignment-btn">Start</button>
+                        </div>
+                        <div class="assignment-item normal">
+                            <div class="assignment-priority"></div>
+                            <div class="assignment-content">
+                                <h4>CS Project</h4>
+                                <p>Binary search tree implementation</p>
+                                <div class="assignment-footer">
+                                    <span class="due-time">⏰ 3 days left</span>
+                                    <span class="points">150 pts</span>
+                                </div>
+                            </div>
+                            <button class="assignment-btn">Start</button>
+                        </div>
+                    </div>
+                    <button class="card-action-btn">View All Assignments →</button>
+                </div>
+
+                <!-- Progress Card -->
+                <div class="content-card progress-card">
+                    <div class="card-header">
+                        <h3>📊 Weekly Progress</h3>
+                        <span class="card-badge success">On track</span>
+                    </div>
+                    <div class="progress-list">
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Study Hours</span>
+                                <span class="progress-value">28/30h</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-bar purple" style="width: 93%">
+                                    <span class="progress-label">93%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Assignments</span>
+                                <span class="progress-value">15/18</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-bar pink" style="width: 83%">
+                                    <span class="progress-label">83%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-header">
+                                <span>Course Completion</span>
+                                <span class="progress-value">12/15</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-bar green" style="width: 80%">
+                                    <span class="progress-label">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Section -->
+            <div class="section-header">
+                <div>
+                    <h2>📚 Continue Learning</h2>
+                    <p>Pick up where you left off</p>
+                </div>
+                <a href="#" class="view-all-btn">View All →</a>
+            </div>
+
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="course-icon purple">📐</div>
+                        <div class="course-badge progress">65%</div>
+                    </div>
+                    <h3>Advanced Mathematics</h3>
+                    <p>Chapter 5: Calculus Fundamentals</p>
+                    <div class="course-progress">
+                        <div class="course-progress-fill purple" style="width: 65%"></div>
+                    </div>
+                    <div class="course-footer">
+                        <span>12 lessons</span>
+                        <span>⏱️ 3.5h</span>
+                    </div>
+                    <button class="course-btn">Continue</button>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="course-icon blue">🧪</div>
+                        <div class="course-badge progress">40%</div>
+                    </div>
+                    <h3>Physics</h3>
+                    <p>Module 3: Thermodynamics</p>
+                    <div class="course-progress">
+                        <div class="course-progress-fill blue" style="width: 40%"></div>
+                    </div>
+                    <div class="course-footer">
+                        <span>18 lessons</span>
+                        <span>⏱️ 5.2h</span>
+                    </div>
+                    <button class="course-btn">Continue</button>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="course-icon green">💻</div>
+                        <div class="course-badge complete">85%</div>
+                    </div>
+                    <h3>Computer Science</h3>
+                    <p>Unit 4: Data Structures</p>
+                    <div class="course-progress">
+                        <div class="course-progress-fill green" style="width: 85%"></div>
+                    </div>
+                    <div class="course-footer">
+                        <span>4 lessons</span>
+                        <span>⏱️ 1.5h</span>
+                    </div>
+                    <button class="course-btn">Continue</button>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="course-icon pink">🌍</div>
+                        <div class="course-badge new">New</div>
+                    </div>
+                    <h3>Geography</h3>
+                    <p>Chapter 1: Climate Change</p>
+                    <div class="course-progress">
+                        <div class="course-progress-fill pink" style="width: 10%"></div>
+                    </div>
+                    <div class="course-footer">
+                        <span>24 lessons</span>
+                        <span>⏱️ 8.0h</span>
+                    </div>
+                    <button class="course-btn">Start Course</button>
+                </div>
+            </div>
+
+            <!-- Bottom Grid -->
+            <div class="bottom-grid">
+                <div class="content-card grades-card">
+                    <div class="card-header">
+                        <h3>📈 Recent Grades</h3>
+                        <a href="#" class="view-all-link">View All →</a>
+                    </div>
+                    <div class="grades-list">
+                        <div class="grade-item excellent">
+                            <div class="grade-subject">
+                                <span class="subject-icon">📐</span>
+                                <div>
+                                    <h4>Mathematics Quiz #5</h4>
+                                    <p>Yesterday</p>
+                                </div>
+                            </div>
+                            <div class="grade-score">95%</div>
+                        </div>
+                        <div class="grade-item good">
+                            <div class="grade-subject">
+                                <span class="subject-icon">🧪</span>
+                                <div>
+                                    <h4>Physics Lab Report</h4>
+                                    <p>2 days ago</p>
+                                </div>
+                            </div>
+                            <div class="grade-score">88%</div>
+                        </div>
+                        <div class="grade-item excellent">
+                            <div class="grade-subject">
+                                <span class="subject-icon">💻</span>
+                                <div>
+                                    <h4>CS Assignment #3</h4>
+                                    <p>3 days ago</p>
+                                </div>
+                            </div>
+                            <div class="grade-score">92%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card quick-actions-card">
+                    <div class="card-header">
+                        <h3>⚡ Quick Actions</h3>
+                    </div>
+                    <div class="quick-actions-grid">
+                        <button class="quick-action-btn">
+                            <span class="action-icon">📝</span>
+                            <span>Create Note</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <span class="action-icon">⏱️</span>
+                            <span>Start Timer</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <span class="action-icon">📅</span>
+                            <span>Add Event</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <span class="action-icon">💬</span>
+                            <span>Ask Question</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="student-dashboard.js"></script>
+</body>
+</html>

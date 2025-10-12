@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - NerdZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="phone-mockup.css">
+    <link rel="stylesheet" href="fix-overflow.css">
+        <link rel="shortcut icon" href="img/logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="NerdZ Logo" class="logo">
+            <span class="brand-name">NerdZ</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="about.html">About</a>
+          
+            <button class="theme-toggle" id="themeToggle">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                Powerful Features
+            </div>
+            <h1 class="hero-title">
+                Everything You Need<br>
+                <span class="gradient-text">In One Place</span>
+            </h1>
+            <p class="hero-description">
+                Discover all the amazing features that make NerdZ the ultimate study platform for students and teachers.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features" id="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3 class="feature-title">AI-Powered Assistant</h3>
+                <p class="feature-description">Get instant help with your doubts, personalized study recommendations, and smart suggestions powered by advanced AI.</p>
+                <ul class="feature-list">
+                    <li>✓ 24/7 doubt solving</li>
+                    <li>✓ Personalized recommendations</li>
+                    <li>✓ Smart study plans</li>
+                    <li>✓ Concept explanations</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3 class="feature-title">Customizable Interface</h3>
+                <p class="feature-description">Make NerdZ truly yours with custom themes, colors, layouts, and personalization options.</p>
+                <ul class="feature-list">
+                    <li>✓ Dark & light modes</li>
+                    <li>✓ Custom color themes</li>
+                    <li>✓ Flexible layouts</li>
+                    <li>✓ Widget customization</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Progress Tracking</h3>
+                <p class="feature-description">Visualize your improvement with detailed analytics, performance graphs, and comprehensive test history.</p>
+                <ul class="feature-list">
+                    <li>✓ Performance analytics</li>
+                    <li>✓ Study time tracking</li>
+                    <li>✓ Grade monitoring</li>
+                    <li>✓ Goal setting</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎵</div>
+                <h3 class="feature-title">Lofi Music Player</h3>
+                <p class="feature-description">Study with curated lofi playlists designed to boost concentration and create the perfect study atmosphere.</p>
+                <ul class="feature-list">
+                    <li>✓ Curated playlists</li>
+                    <li>✓ Focus-enhancing music</li>
+                    <li>✓ Offline mode</li>
+                    <li>✓ Custom playlists</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⏰</div>
+                <h3 class="feature-title">Smart Timers</h3>
+                <p class="feature-description">Pomodoro technique timers, custom alarms, and smart reminders to keep you focused and on track.</p>
+                <ul class="feature-list">
+                    <li>✓ Pomodoro timer</li>
+                    <li>✓ Custom intervals</li>
+                    <li>✓ Break reminders</li>
+                    <li>✓ Focus statistics</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3 class="feature-title">Rewards System</h3>
+                <p class="feature-description">Earn badges, achievements, and rewards to stay motivated and make studying more engaging.</p>
+                <ul class="feature-list">
+                    <li>✓ Achievement badges</li>
+                    <li>✓ Streak tracking</li>
+                    <li>✓ Leaderboards</li>
+                    <li>✓ Reward points</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3 class="feature-title">Smart Notes</h3>
+                <p class="feature-description">Create beautiful notes with rich text, images, code snippets, and organize them effortlessly.</p>
+                <ul class="feature-list">
+                    <li>✓ Rich text editor</li>
+                    <li>✓ Code highlighting</li>
+                    <li>✓ Image support</li>
+                    <li>✓ Cloud sync</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎥</div>
+                <h3 class="feature-title">Video Lectures</h3>
+                <p class="feature-description">Access video lectures, tutorials, and educational content from expert teachers.</p>
+                <ul class="feature-list">
+                    <li>✓ HD video quality</li>
+                    <li>✓ Downloadable content</li>
+                    <li>✓ Playback speed control</li>
+                    <li>✓ Subtitles support</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3 class="feature-title">Community</h3>
+                <p class="feature-description">Connect with fellow students, share knowledge, and collaborate on study projects.</p>
+                <ul class="feature-list">
+                    <li>✓ Discussion forums</li>
+                    <li>✓ Study groups</li>
+                    <li>✓ Peer tutoring</li>
+                    <li>✓ Q&A platform</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3 class="feature-title">Advanced Analytics</h3>
+                <p class="feature-description">Get deep insights into your study patterns, strengths, weaknesses, and improvement areas.</p>
+                <ul class="feature-list">
+                    <li>✓ Performance reports</li>
+                    <li>✓ Study insights</li>
+                    <li>✓ Trend analysis</li>
+                    <li>✓ Recommendations</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h3 class="feature-title">Smart Scheduling</h3>
+                <p class="feature-description">AI-powered timetable creation, automatic scheduling, and calendar integration.</p>
+                <ul class="feature-list">
+                    <li>✓ Auto timetable</li>
+                    <li>✓ Calendar sync</li>
+                    <li>✓ Reminders</li>
+                    <li>✓ Event management</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h3 class="feature-title">Smart Notifications</h3>
+                <p class="feature-description">Never miss deadlines with intelligent notifications and customizable alert preferences.</p>
+                <ul class="feature-list">
+                    <li>✓ Assignment reminders</li>
+                    <li>✓ Class notifications</li>
+                    <li>✓ Custom alerts</li>
+                    <li>✓ Email digests</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to Experience These Features?</h2>
+            <p class="cta-description">Join thousands of students already studying smarter with NerdZ</p>
+            <div class="cta-buttons">
+                <a href="login.html" class="btn btn-primary btn-large">
+                    <span>Get Started Free</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <img src="img/logo.jpeg" alt="NerdZ Logo" class="logo">
+                    <span class="brand-name">NerdZ</span>
+                </div>
+                <p class="footer-description">Making study easier and more engaging for students worldwide.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <a href="features.html">Features</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="help-center.html">Help Center</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="help-center.html">Documentation</a>
+                <a href="help-center.html">Help Center</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NerdZ. Open Source & Free Forever.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

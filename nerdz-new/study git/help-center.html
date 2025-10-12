@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - NerdZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="phone-mockup.css">
+    <link rel="stylesheet" href="fix-overflow.css">
+</head>
+<body>
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <nav>
+        <div class="logo-container">
+            <img src="img/logo.jpeg" alt="NerdZ Logo" class="logo">
+            <span class="brand-name">NerdZ</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="about.html">About</a>
+            <a href="pricing.html">Pricing</a>
+            <button class="theme-toggle" id="themeToggle">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                We're Here to Help
+            </div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Help Center</span>
+            </h1>
+            <p class="hero-description">
+                Find answers to common questions, browse guides, or contact our support team.
+            </p>
+        </div>
+    </section>
+
+    <!-- Help Categories -->
+    <section class="features">
+        <div class="section-header">
+            <h2 class="section-title">Browse by Category</h2>
+            <p class="section-subtitle">Find quick answers to your questions</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3 class="feature-title">Getting Started</h3>
+                <p class="feature-description">Learn the basics and set up your account</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👤</div>
+                <h3 class="feature-title">Account & Profile</h3>
+                <p class="feature-description">Manage your account settings and preferences</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3 class="feature-title">Courses & Learning</h3>
+                <p class="feature-description">Everything about courses and study materials</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">✅</div>
+                <h3 class="feature-title">Assignments & Tests</h3>
+                <p class="feature-description">How to submit and track your assignments</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3 class="feature-title">Technical Support</h3>
+                <p class="feature-description">Troubleshooting and technical issues</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h3 class="feature-title">Billing & Payments</h3>
+                <p class="feature-description">Questions about pricing and payments</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="features">
+        <div class="section-header">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="features-grid" style="grid-template-columns: 1fr;">
+            <div class="feature-card">
+                <h3 class="feature-title">How do I create an account?</h3>
+                <p class="feature-description">Click the "Get Started" button, choose Student or Teacher, and fill in your email and password. You'll be ready to go in seconds!</p>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="feature-title">How do I reset my password?</h3>
+                <p class="feature-description">Click "Forgot Password" on the login page, enter your email, and we'll send you a reset link.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="feature-title">Can I use NerdZ on mobile?</h3>
+                <p class="feature-description">Yes! NerdZ is fully responsive and works perfectly on all devices - desktop, tablet, and mobile.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="feature-title">How do I contact support?</h3>
+                <p class="feature-description">Visit our Contact page or email us at support@nerdz.com. We typically respond within 24 hours.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="feature-title">Is my data secure?</h3>
+                <p class="feature-description">Absolutely! We use industry-standard encryption and never share your data with third parties.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Still Need Help?</h2>
+            <p class="cta-description">Our support team is ready to assist you</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary btn-large">
+                    <span>Contact Support</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-container">
+                    <img src="img/logo.jpeg" alt="NerdZ Logo" class="logo">
+                    <span class="brand-name">NerdZ</span>
+                </div>
+                <p class="footer-description">Making study easier and more engaging for students worldwide.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <a href="features.html">Features</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="help-center.html">Help Center</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="help-center.html">Documentation</a>
+                <a href="help-center.html">Help Center</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NerdZ. Open Source & Free Forever.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
