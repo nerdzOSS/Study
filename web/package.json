@@ -1,0 +1,17 @@
+{
+  "name": "nerdz_backend",
+  "version": "1.0.0",
+  "description": "backend for nerdz",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@workos-inc/node": "^7.71.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  }
+}

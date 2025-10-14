@@ -16,6 +16,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
+import { ApiService } from '@/services/api';
 
 const { width, height } = Dimensions.get('window');
 
@@ -134,6 +135,7 @@ export default function AccountScreen() {
         },
       ]
     );
+    ApiService.logout()
   };
 
   const handleDeleteAccount = () => {

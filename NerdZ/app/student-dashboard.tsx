@@ -10,15 +10,26 @@ import {
   StatusBar,
   Image,
   TextInput,
+  Alert,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useAuth } from '@/contexts/AuthContext';
+import { BiometricStatus } from '@/components/BiometricStatus';
 
 const { width, height } = Dimensions.get('window');
 
 export default function StudentDashboardScreen() {
+  const { user, logout, isAuthenticated } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    // Redirect to login if not authenticated
+    if (!isAuthenticated) {
+      router.replace('/login');
+    }
+  }, [isAuthenticated]);
   
   const orb1Anim = useRef(new Animated.Value(0)).current;
   const orb2Anim = useRef(new Animated.Value(0)).current;
@@ -100,15 +111,32 @@ export default function StudentDashboardScreen() {
                 <Ionicons name="notifications-outline" size={24} color="#fff" />
                 <View style={styles.notificationDot} />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-                <Ionicons name="arrow-back" size={24} color="#fff" />
+              <TouchableOpacity style={styles.logoutButton} onPress={async () => {
+                Alert.alert(
+                  'Logout',
+                  'Are you sure you want to logout?',
+                  [
+                    { text: 'Cancel', style: 'cancel' },
+                    {
+                      text: 'Logout',
+                      style: 'destructive',
+                      onPress: async () => {
+                        await logout();
+                        console.log('👋 Logged out successfully');
+                        router.replace('/login');
+                      },
+                    },
+                  ]
+                );
+              }}>
+                <Ionicons name="log-out-outline" size={24} color="#fff" />
               </TouchableOpacity>
             </View>
           </View>
 
           <View style={styles.welcomeSection}>
             <Text style={styles.greeting}>
-              Good Morning, <Text style={styles.userName}>Student</Text>! 👋
+              Good Morning, <Text style={styles.userName}>{user?.email.split('@')[0] || 'Student'}</Text>! 👋
             </Text>
             <Text style={styles.subtitle}>Ready to make today productive?</Text>
           </View>
@@ -205,6 +233,11 @@ export default function StudentDashboardScreen() {
               </View>
             ))}
           </View>
+        </View>
+
+        {/* Biometric Status */}
+        <View style={styles.section}>
+          <BiometricStatus />
         </View>
 
         {/* Quick Actions */}
@@ -324,12 +357,12 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     backgroundColor: '#ef4444',
   },
-  backButton: {
+  logoutButton: {
     padding: 8,
     borderRadius: 10,
-    backgroundColor: 'rgba(30, 30, 45, 0.6)',
+    backgroundColor: 'rgba(239, 68, 68, 0.2)',
     borderWidth: 1,
-    borderColor: 'rgba(99, 102, 241, 0.2)',
+    borderColor: 'rgba(239, 68, 68, 0.4)',
   },
   welcomeSection: {
     marginBottom: 16,
