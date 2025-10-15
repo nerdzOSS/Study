@@ -16,6 +16,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useAuth } from '@/contexts/AuthContext';
+import { secureStorage } from '@/services/secureStorage';
 
 const { width, height } = Dimensions.get('window');
 
@@ -27,13 +28,27 @@ export default function StudentDashboardScreen() {
   const orb2Anim = useRef(new Animated.Value(0)).current;
   const orb3Anim = useRef(new Animated.Value(0)).current;
 
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    if (!isAuthenticated) {
-      router.replace('/login');
-    } else if (isTeacher) {
-      router.replace('/teachers');
-    }
+    // Delay navigation to ensure component is fully mounted
+    const timer = setTimeout(() => {
+      if (!isAuthenticated) {
+        router.push('/login');
+      } else if (isTeacher) {
+        router.push('/teachers');
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, [isAuthenticated, isTeacher]);
+
+  useEffect(() => {
+    // Set loading to false once auth state is determined
+    if (isAuthenticated !== undefined) {
+      setIsLoading(false);
+    }
+  }, [isAuthenticated]);
 
   useEffect(() => {
     const animateOrb = (anim: Animated.Value, delay: number) => {
@@ -82,6 +97,14 @@ export default function StudentDashboardScreen() {
     ],
   });
 
+  if (isLoading) {
+    return (
+      <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
+        <Text style={{ color: '#ffffff', fontSize: 18 }}>Loading...</Text>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
@@ -126,8 +149,20 @@ export default function StudentDashboardScreen() {
                       onPress: async () => {
                         try {
                           await logout();
-                          router.replace('/');
+                          // Small delay to ensure storage clearing completes
+                          setTimeout(() => {
+                            // Try router navigation first (works on mobile)
+                            try {
+                              router.replace('/login');
+                            } catch (navError) {
+                              // Fallback to direct navigation for web
+                              if (typeof window !== 'undefined') {
+                                window.location.href = '/login';
+                              }
+                            }
+                          }, 100);
                         } catch (error) {
+                          console.error('Logout error:', error);
                           Alert.alert('Error', 'Failed to logout');
                         }
                       },

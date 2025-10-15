@@ -25,13 +25,27 @@ export default function StudentScreen() {
   const orb2Anim = useRef(new Animated.Value(0)).current;
   const orb3Anim = useRef(new Animated.Value(0)).current;
 
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    if (!isAuthenticated) {
-      router.replace('/login');
-    } else if (isTeacher) {
-      router.replace('/teachers');
-    }
+    // Delay navigation to ensure component is fully mounted
+    const timer = setTimeout(() => {
+      if (!isAuthenticated) {
+        router.push('/login');
+      } else if (isTeacher) {
+        router.push('/teachers');
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, [isAuthenticated, isTeacher]);
+
+  useEffect(() => {
+    // Set loading to false once auth state is determined
+    if (isAuthenticated !== undefined) {
+      setIsLoading(false);
+    }
+  }, [isAuthenticated]);
 
   useEffect(() => {
     const animateOrb = (anim: Animated.Value, delay: number) => {
@@ -109,6 +123,14 @@ export default function StudentScreen() {
     }
     return null;
   };
+
+  if (isLoading) {
+    return (
+      <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
+        <Text style={{ color: '#ffffff', fontSize: 18 }}>Loading...</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>

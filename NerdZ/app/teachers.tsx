@@ -17,6 +17,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useAuth } from '@/contexts/AuthContext';
+import { secureStorage } from '@/services/secureStorage';
 
 const { width, height } = Dimensions.get('window');
 
@@ -42,18 +43,34 @@ export default function TeachersScreen() {
   const [uploadModalVisible, setUploadModalVisible] = useState(false);
   const [contentTitle, setContentTitle] = useState('');
   const [contentDesc, setContentDesc] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   const orb1Anim = useRef(new Animated.Value(0)).current;
   const orb2Anim = useRef(new Animated.Value(0)).current;
   const orb3Anim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    if (!isAuthenticated) {
-      router.replace('/login');
-    } else if (isStudent) {
-      router.replace('/student-dashboard');
-    }
+    // Delay navigation to ensure component is fully mounted
+    const timer = setTimeout(() => {
+      if (isAuthenticated === false) {
+        router.push('/login');
+      } else if (isAuthenticated === true && isStudent) {
+        router.push('/student-dashboard');
+      } else if (isAuthenticated === true && !isStudent) {
+        // Stay on teachers screen - we're already here
+        setIsLoading(false);
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, [isAuthenticated, isStudent]);
+
+  useEffect(() => {
+    // Set loading to false once auth state is determined
+    if (isAuthenticated !== undefined) {
+      setIsLoading(false);
+    }
+  }, [isAuthenticated]);
 
   const [contents, setContents] = useState<Content[]>([
     {
@@ -185,14 +202,28 @@ export default function TeachersScreen() {
           onPress: async () => {
             try {
               await logout();
-              router.replace('/');
+              // Small delay to ensure storage clearing completes
+              setTimeout(() => {
+                // Try router navigation first (works on mobile)
+                try {
+                  router.replace('/login');
+                } catch (navError) {
+                  // Fallback to direct navigation for web
+                  if (typeof window !== 'undefined') {
+                    window.location.href = '/login';
+                  }
+                }
+              }, 100);
             } catch (error) {
+              console.error('Logout error:', error);
               Alert.alert('Error', 'Failed to logout');
             }
           },
         },
-      ])
-    };
+      ]
+    );
+  };
+
   const handleUpload = () => {
     if (!contentTitle.trim()) {
       Alert.alert('Error', 'Please enter a title');
@@ -203,6 +234,14 @@ export default function TeachersScreen() {
     setContentTitle('');
     setContentDesc('');
   };
+
+  if (isLoading) {
+    return (
+      <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
+        <Text style={{ color: '#ffffff', fontSize: 18 }}>Loading...</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>

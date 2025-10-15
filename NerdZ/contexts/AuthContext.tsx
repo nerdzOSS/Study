@@ -32,6 +32,8 @@ interface AuthProviderProps {
   children: ReactNode;
 }
 
+const API_BASE_URL = 'https://study-a09j.onrender.com/api';
+
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(null);
@@ -39,8 +41,32 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   // Initialize auth state on app start
   useEffect(() => {
+    // Send background ping to server when app starts
+    sendBackgroundPing();
+
     refreshAuth();
   }, []);
+
+  // Background ping to server
+  const sendBackgroundPing = async () => {
+    try {
+      // Get server URL from environment or use fallback
+      const serverUrl = process.env.EXPO_PUBLIC_SERVER_URL || process.env.ASSOCIATED_DOMAIN || API_BASE_URL;
+
+      // Use fetch with no-cors mode for background ping
+      await fetch(`${serverUrl}`, {
+        method: 'GET',
+        mode: 'no-cors',
+        cache: 'no-cache',
+      }).catch(() => {
+        // Silently fail - this is just a background ping
+        console.log('Background ping completed (server may not be available)');
+      });
+    } catch (error) {
+      // Silently fail - background ping should not affect app functionality
+      console.log('Background ping failed (expected for development)');
+    }
+  };
 
   const refreshAuth = async () => {
     try {
@@ -106,10 +132,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const logout = async () => {
     try {
+      console.log('Starting logout process...');
       setIsLoading(true);
       await authApi.logout();
+      console.log('Auth API logout completed');
       setUser(null);
       setToken(null);
+      console.log('Auth state cleared, isAuthenticated should be false');
+
+      // Small delay to ensure state updates properly
+      await new Promise(resolve => setTimeout(resolve, 50));
+      console.log('Logout process completed');
     } catch (error) {
       console.error('Logout error:', error);
       throw error;

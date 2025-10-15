@@ -18,19 +18,35 @@ import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useAuth } from '@/contexts/AuthContext';
 import authApi from '@/services/authApi';
+import { secureStorage } from '@/services/secureStorage';
 
 const { width, height } = Dimensions.get('window');
 
-type SettingsSection = 'profile' | 'account' | 'notifications' | 'appearance' | 'privacy' | 'preferences';
+type SettingsSection = 'profile' | 'account' | 'privacy' | 'preferences';
 
 export default function SettingsScreen() {
   const { logout, isAuthenticated, user } = useAuth();
   const [activeSection, setActiveSection] = useState<SettingsSection>('profile');
   const [isUserDataLoaded, setIsUserDataLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  if(!isAuthenticated){
-    router.replace('/login');
-  }
+  useEffect(() => {
+    // Delay navigation to ensure component is fully mounted
+    const timer = setTimeout(() => {
+      if(!isAuthenticated){
+        router.push('/login');
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [isAuthenticated]);
+
+  useEffect(() => {
+    // Set loading to false once auth state is determined
+    if (isAuthenticated !== undefined) {
+      setIsLoading(false);
+    }
+  }, [isAuthenticated]);
 
   useEffect(() => {
     if (user) {
@@ -119,9 +135,26 @@ export default function SettingsScreen() {
           style: 'destructive',
           onPress: async () => {
             try {
+              console.log('Logout button pressed, calling logout()...');
               await logout();
-              router.replace('/login');
+              console.log('Logout completed, navigating to login...');
+              // Small delay to ensure storage clearing completes
+              setTimeout(() => {
+                // Try router navigation first (works on mobile)
+                try {
+                  console.log('Attempting router navigation to /login');
+                  router.replace('/login');
+                } catch (navError) {
+                  console.error('Router navigation failed:', navError);
+                  // Fallback to direct navigation for web
+                  if (typeof window !== 'undefined') {
+                    console.log('Using fallback navigation to /login');
+                    window.location.href = '/login';
+                  }
+                }
+              }, 100);
             } catch (error) {
+              console.error('Logout error:', error);
               Alert.alert('Error', 'Failed to logout');
             }
           },
@@ -156,8 +189,6 @@ export default function SettingsScreen() {
   const navItems = [
     { key: 'profile' as SettingsSection, icon: 'person-outline', label: 'Profile' },
     { key: 'account' as SettingsSection, icon: 'lock-closed-outline', label: 'Account' },
-    { key: 'notifications' as SettingsSection, icon: 'notifications-outline', label: 'Notifications' },
-    { key: 'appearance' as SettingsSection, icon: 'color-palette-outline', label: 'Appearance' },
     { key: 'privacy' as SettingsSection, icon: 'shield-outline', label: 'Privacy' },
     { key: 'preferences' as SettingsSection, icon: 'settings-outline', label: 'Preferences' },
   ];
