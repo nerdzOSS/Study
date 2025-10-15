@@ -111,6 +111,9 @@ export default function StudentDashboardScreen() {
                 <Ionicons name="notifications-outline" size={24} color="#fff" />
                 <View style={styles.notificationDot} />
               </TouchableOpacity>
+              <TouchableOpacity style={styles.settingsButton} onPress={() => router.push('/settings')}>
+                <Ionicons name="settings-outline" size={24} color="#fff" />
+              </TouchableOpacity>
               <TouchableOpacity style={styles.logoutButton} onPress={() => {
                 Alert.alert(
                   'Logout',
@@ -345,6 +348,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(99, 102, 241, 0.2)',
     position: 'relative',
+  },
+  settingsButton: {
+    padding: 8,
+    borderRadius: 10,
+    backgroundColor: 'rgba(139, 92, 246, 0.2)',
+    borderWidth: 1,
+    borderColor: 'rgba(139, 92, 246, 0.4)',
   },
   notificationDot: {
     position: 'absolute',

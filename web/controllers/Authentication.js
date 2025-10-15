@@ -54,6 +54,9 @@ const authenticate = async (req, res, next) => {
                 username: user.username,
                 email: user.email,
                 is_teacher: user.is_teacher === true || user.is_teacher === 'teacher',
+                first_name: user.first_name,
+                last_name: user.last_name,
+                bio: user.bio,
             }
         });
 
