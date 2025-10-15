@@ -23,5 +23,8 @@ app.use(morgan('dev'));
 
 app.post('/api/login', Authentication);
 app.post('/api/user/signup', UserController.signup);
+app.get('/health', (req,res)=>{
+    res.send('ok')
+})
 
 module.exports = {app};
