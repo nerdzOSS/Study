@@ -38,12 +38,7 @@ const authenticate = async (req, res, next) => {
             return res.json({success: false, data: 'Invalid password'});
         }
 
-        const payload = {
-            id: user.id,
-            username: user.username,
-            email: user.email,
-            is_teacher: user.is_teacher === true || user.is_teacher === 'teacher',
-        };
+        const payload = user;
 
         const token = jwt.sign(payload, APP_CONFIG.API_SECRET, {
             algorithm: 'HS256',

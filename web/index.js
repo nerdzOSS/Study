@@ -23,6 +23,9 @@ app.use(morgan('dev'));
 
 app.post('/api/login', Authentication);
 app.post('/api/user/signup', UserController.signup);
+app.get('/api/getinfo', (req,res)=>{
+    res.json({success: true, data: 'ok'})
+})
 app.get('/health', (req,res)=>{
     res.send('ok')
 })

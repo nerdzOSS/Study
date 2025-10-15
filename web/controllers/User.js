@@ -18,16 +18,20 @@ const signup = (req, res, next) => {
         bio: req.body.bio || null,
     }).then(e=>{
         if (e.error) {
-            res.status(200).json({ success: false, data: e.error.message });
+            console.error('Database insert error:', e.error);
+            res.status(200).json({ success: false, message: e.error.message || 'Database insert failed' });
             return;
         }
 
         // Create JWT token for the new user
         const payload = {
-            id: e.data[0].id,
-            username: req.body.username,
-            email: req.body.email,
-            is_teacher: req.body.is_teacher === true || req.body.is_teacher === 'teacher',
+        email: req.body.email,
+        username: req.body.username,
+        password: HashService.generateHash(req.body.password),
+        is_teacher: req.body.is_teacher === true || req.body.is_teacher === 'teacher',
+        first_name: req.body.firstName || null,
+        last_name: req.body.lastName || null,
+        bio: req.body.bio || null,
         };
 
         const token = jwt.sign(payload, APP_CONFIG.API_SECRET, {
@@ -51,7 +55,8 @@ const signup = (req, res, next) => {
         });
         console.log('User saved successfully')
     }).catch(e=>{
-        res.status(200).json({ success: false, data: e });
+        console.error('Signup error:', e);
+        res.status(200).json({ success: false, message: e.message || 'Signup failed' });
     })
 };
 
