@@ -16,7 +16,6 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
-import { ApiService } from '@/services/api';
 
 const { width, height } = Dimensions.get('window');
 
@@ -124,18 +123,17 @@ export default function AccountScreen() {
 
   const handleLogout = () => {
     Alert.alert(
-      'Logout',
-      'Are you sure you want to logout?',
+      'Go Back',
+      'Return to home screen?',
       [
         { text: 'Cancel', style: 'cancel' },
         { 
-          text: 'Logout', 
-          onPress: () => router.replace('/login'),
-          style: 'destructive'
+          text: 'Go Home', 
+          onPress: () => router.replace('/'),
+          style: 'default'
         },
       ]
     );
-    ApiService.logout()
   };
 
   const handleDeleteAccount = () => {
@@ -145,10 +143,12 @@ export default function AccountScreen() {
     }
 
     Alert.alert(
-      'Account Deleted',
-      'Your account has been permanently deleted',
-      [{ text: 'OK', onPress: () => router.replace('/login') }]
+      'Demo Mode',
+      'Account deletion is not available in demo mode',
+      [{ text: 'OK' }]
     );
+    setShowDeleteModal(false);
+    setDeleteConfirmText('');
   };
 
   const handleLogoutAllDevices = () => {

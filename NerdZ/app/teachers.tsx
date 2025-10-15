@@ -16,6 +16,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useAuth } from '@/contexts/AuthContext';
 
 const { width, height } = Dimensions.get('window');
 
@@ -34,16 +35,25 @@ interface Content {
 }
 
 export default function TeachersScreen() {
+  const { logout, isAuthenticated, user, isTeacher, isStudent } = useAuth();
   const [activeTab, setActiveTab] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [subjectFilter, setSubjectFilter] = useState('all');
   const [uploadModalVisible, setUploadModalVisible] = useState(false);
   const [contentTitle, setContentTitle] = useState('');
   const [contentDesc, setContentDesc] = useState('');
-  
+
   const orb1Anim = useRef(new Animated.Value(0)).current;
   const orb2Anim = useRef(new Animated.Value(0)).current;
   const orb3Anim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.replace('/login');
+    } else if (isStudent) {
+      router.replace('/student-dashboard');
+    }
+  }, [isAuthenticated, isStudent]);
 
   const [contents, setContents] = useState<Content[]>([
     {
@@ -160,6 +170,29 @@ export default function TeachersScreen() {
     );
   };
 
+  const handleLogout = async () => {
+    Alert.alert(
+      'Logout',
+      'Are you sure you want to logout?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'Logout',
+          style: 'destructive',
+          onPress: async () => {
+            try {
+              await logout();
+              router.replace('/');
+            } catch (error) {
+              Alert.alert('Error', 'Failed to logout');
+            }
+          },
+        },
+      ])
+    };
   const handleUpload = () => {
     if (!contentTitle.trim()) {
       Alert.alert('Error', 'Please enter a title');
@@ -196,6 +229,9 @@ export default function TeachersScreen() {
           <View style={styles.navActions}>
             <TouchableOpacity style={styles.navButton} onPress={() => router.push('/settings')}>
               <Ionicons name="settings-outline" size={24} color="#fff" />
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.navButton, { backgroundColor: 'rgba(239, 68, 68, 0.2)', borderColor: 'rgba(239, 68, 68, 0.4)' }]} onPress={handleLogout}>
+              <Ionicons name="log-out-outline" size={24} color="#fff" />
             </TouchableOpacity>
             <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
               <Ionicons name="arrow-back" size={24} color="#fff" />

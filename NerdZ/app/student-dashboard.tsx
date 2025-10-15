@@ -16,24 +16,24 @@ import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useAuth } from '@/contexts/AuthContext';
-import { BiometricStatus } from '@/components/BiometricStatus';
 
 const { width, height } = Dimensions.get('window');
 
 export default function StudentDashboardScreen() {
-  const { user, logout, isAuthenticated } = useAuth();
+  const { logout, isAuthenticated, user, isTeacher } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
 
-  useEffect(() => {
-    // Redirect to login if not authenticated
-    if (!isAuthenticated) {
-      router.replace('/login');
-    }
-  }, [isAuthenticated]);
-  
   const orb1Anim = useRef(new Animated.Value(0)).current;
   const orb2Anim = useRef(new Animated.Value(0)).current;
   const orb3Anim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.replace('/login');
+    } else if (isTeacher) {
+      router.replace('/teachers');
+    }
+  }, [isAuthenticated, isTeacher]);
 
   useEffect(() => {
     const animateOrb = (anim: Animated.Value, delay: number) => {
@@ -111,7 +111,7 @@ export default function StudentDashboardScreen() {
                 <Ionicons name="notifications-outline" size={24} color="#fff" />
                 <View style={styles.notificationDot} />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.logoutButton} onPress={async () => {
+              <TouchableOpacity style={styles.logoutButton} onPress={() => {
                 Alert.alert(
                   'Logout',
                   'Are you sure you want to logout?',
@@ -121,9 +121,12 @@ export default function StudentDashboardScreen() {
                       text: 'Logout',
                       style: 'destructive',
                       onPress: async () => {
-                        await logout();
-                        console.log('👋 Logged out successfully');
-                        router.replace('/login');
+                        try {
+                          await logout();
+                          router.replace('/');
+                        } catch (error) {
+                          Alert.alert('Error', 'Failed to logout');
+                        }
                       },
                     },
                   ]
@@ -136,7 +139,7 @@ export default function StudentDashboardScreen() {
 
           <View style={styles.welcomeSection}>
             <Text style={styles.greeting}>
-              Good Morning, <Text style={styles.userName}>{user?.email.split('@')[0] || 'Student'}</Text>! 👋
+              Good Morning, <Text style={styles.userName}>Student</Text>! 👋
             </Text>
             <Text style={styles.subtitle}>Ready to make today productive?</Text>
           </View>
@@ -233,11 +236,6 @@ export default function StudentDashboardScreen() {
               </View>
             ))}
           </View>
-        </View>
-
-        {/* Biometric Status */}
-        <View style={styles.section}>
-          <BiometricStatus />
         </View>
 
         {/* Quick Actions */}

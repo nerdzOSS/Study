@@ -5,11 +5,13 @@ import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Dimensions, Anima
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useAuth } from '@/contexts/AuthContext';
 
 const { width, height } = Dimensions.get('window');
 type Section = 'class-selection' | 'study-materials' | 'video-lectures' | 'ai-assistant' | 'quiz' | 'schedule' | 'pomodoro' | 'notes' | 'progress';
 
 export default function StudentScreen() {
+  const { isAuthenticated, isTeacher } = useAuth();
   const [activeSection, setActiveSection] = useState<Section>('class-selection');
   const [selectedClass, setSelectedClass] = useState('');
   const [subjectFilter, setSubjectFilter] = useState('all');
@@ -18,10 +20,18 @@ export default function StudentScreen() {
   const [pomodoroRunning, setPomodoroRunning] = useState(false);
   const [noteTitle, setNoteTitle] = useState('');
   const [noteContent, setNoteContent] = useState('');
-  
+
   const orb1Anim = useRef(new Animated.Value(0)).current;
   const orb2Anim = useRef(new Animated.Value(0)).current;
   const orb3Anim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.replace('/login');
+    } else if (isTeacher) {
+      router.replace('/teachers');
+    }
+  }, [isAuthenticated, isTeacher]);
 
   useEffect(() => {
     const animateOrb = (anim: Animated.Value, delay: number) => {

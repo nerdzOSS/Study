@@ -1,13 +1,20 @@
 {
   "expo": {
     "name": "NerdZ",
-    "slug": "NerdZ",
+    "slug": "nerdz",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "nerdz",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "extra": {
+      "apiUrl": "http://localhost:8000/api",
+      "router": {},
+      "eas": {
+        "projectId": "47b25a9b-ca12-4441-a53e-b2e19cca3035"
+      }
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.nerdz.study"
@@ -41,12 +48,13 @@
           }
         }
       ],
-      "expo-secure-store",
+      ["expo-secure-store", {"faceIDPermission":"Allow $(PRODUCT_NAME) to authenticate you"}],
       "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "owner": "ridheshcybe"
   }
 }

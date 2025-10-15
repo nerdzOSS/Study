@@ -1,17 +1,27 @@
-import express from 'express';
-import { WorkOS } from '@workos-inc/node';
-import dotenv from 'dotenv'
-dotenv.config()
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+dotenv.config();
 
-const workos = new WorkOS(process.env.WORKOS_API_KEY);
 const app = express();
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const passport = require('passport');
+const APP_CONFIG = require('./config');
+const Authentication = require('./controllers/Authentication');
+const UserController = require('./controllers/User');
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+// Create a single supabase client for interacting with your database
+app.use(passport.initialize());
+app.use(cors())
+require('./config/passport')(passport);
 
-app.listen(3000, () => {
-    console.log('Server started on port 3000');
-});
+app.set('superSecret', APP_CONFIG.API_SECRET);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(morgan('dev'));
 
-export default app;
+app.post('/api/login', Authentication);
+app.post('/api/user/signup', UserController.signup);
+
+module.exports = {app};
