@@ -56,19 +56,12 @@
         <!-- Sidebar Navigation -->
         <aside class="settings-sidebar">
             <nav class="settings-nav">
-                <button class="settings-nav-item active" data-section="profile">
+                <button class="settings-nav-item active" data-section="general">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 1v6m0 6v6"></path>
                     </svg>
-                    <span>Profile</span>
-                </button>
-                <button class="settings-nav-item" data-section="account">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                    </svg>
-                    <span>Account</span>
+                    <span>General</span>
                 </button>
                 <button class="settings-nav-item" data-section="notifications">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -76,20 +69,6 @@
                         <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                     </svg>
                     <span>Notifications</span>
-                </button>
-                <button class="settings-nav-item" data-section="appearance">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <span>Appearance</span>
                 </button>
                 <button class="settings-nav-item" data-section="privacy">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -109,65 +88,36 @@
 
         <!-- Settings Content -->
         <div class="settings-content">
-            <!-- Profile Section -->
-            <section class="settings-section active" id="profile">
+            <!-- General Section -->
+            <section class="settings-section active" id="general">
                 <div class="section-header">
-                    <h2 class="section-title">Profile Settings</h2>
-                    <p class="section-subtitle">Manage your public profile information</p>
+                    <h2 class="section-title">General Settings</h2>
+                    <p class="section-subtitle">Basic app configuration</p>
                 </div>
 
                 <div class="settings-card">
-                    <div class="profile-photo-section">
-                        <div class="profile-photo">
-                            <img src="https://ui-avatars.com/api/?name=John+Doe&size=200&background=6366f1&color=fff" alt="Profile">
+                    <h3 class="card-title">App Information</h3>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <span class="info-label">Version</span>
+                            <span class="info-value">1.0.0</span>
                         </div>
-                        <div class="photo-actions">
-                            <button class="btn btn-primary">Change Photo</button>
-                            <button class="btn btn-secondary">Remove</button>
+                        <div class="info-item">
+                            <span class="info-label">Build</span>
+                            <span class="info-value">2024.1</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="settings-card">
-                    <h3 class="card-title">Personal Information</h3>
-                    <form class="settings-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>First Name</label>
-                                <input type="text" value="John" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name</label>
-                                <input type="text" value="Doe" required>
-                            </div>
+                    <h3 class="card-title">Data Management</h3>
+                    <div class="action-item">
+                        <div class="action-info">
+                            <h4 class="action-title">Clear Cache</h4>
+                            <p class="action-desc">Remove temporary files and cached data</p>
                         </div>
-                        <div class="form-group">
-                            <label>Display Name</label>
-                            <input type="text" value="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Bio</label>
-                            <textarea rows="3" placeholder="Tell us about yourself...">Physics and Mathematics Teacher with 10+ years of experience</textarea>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="tel" value="+1 (555) 123-4567">
-                            </div>
-                            <div class="form-group">
-                                <label>Date of Birth</label>
-                                <input type="date" value="1985-05-15">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Location</label>
-                            <input type="text" value="New York, USA">
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
-                            <button type="reset" class="btn btn-secondary">Cancel</button>
-                        </div>
-                    </form>
+                        <button class="btn btn-secondary" onclick="handleClearCache()">Clear</button>
+                    </div>
                 </div>
             </section>
 
