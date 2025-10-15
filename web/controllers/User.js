@@ -12,7 +12,7 @@ const signup = (req, res, next) => {
         email: req.body.email,
         username: req.body.username,
         password: HashService.generateHash(req.body.password),
-        is_teacher: req.body.is_teacher || false,
+        is_teacher: req.body.is_teacher === true || req.body.is_teacher === 'teacher',
         first_name: req.body.firstName || null,
         last_name: req.body.lastName || null,
         bio: req.body.bio || null,
@@ -27,7 +27,7 @@ const signup = (req, res, next) => {
             id: e.data[0].id,
             username: req.body.username,
             email: req.body.email,
-            is_teacher: req.body.is_teacher || false,
+            is_teacher: req.body.is_teacher === true || req.body.is_teacher === 'teacher',
         };
 
         const token = jwt.sign(payload, APP_CONFIG.API_SECRET, {
@@ -43,7 +43,7 @@ const signup = (req, res, next) => {
                 id: e.data[0].id,
                 username: req.body.username,
                 email: req.body.email,
-                is_teacher: req.body.is_teacher || false,
+                is_teacher: req.body.is_teacher === true || req.body.is_teacher === 'teacher',
                 first_name: req.body.firstName || null,
                 last_name: req.body.lastName || null,
                 bio: req.body.bio || null,
