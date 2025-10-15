@@ -27,7 +27,7 @@ export async function getSupabaseWithAuth() {
 
 
 export default authkitMiddleware({
-    'redirectUri': 'http://localhost:3001/callback',
+    'redirectUri': 'http://study-ten-gamma.vercel.app/callback',
   // Protect all routes by default; allow public ones
   middlewareAuth: {
     enabled: true,
