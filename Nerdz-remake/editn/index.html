@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nerdz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="brand-showcase.css">
+    <link rel="stylesheet" href="music-player.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="img/logo.jpeg" alt="nerdz-logo">
+                <h1 class="nerdz-text">Nerdz</h1>
+            </div>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">How it Works</a>
+                <a href="#" class="nav-link">Features</a>
+                <a href="#" class="nav-link">Documentation</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="music-icon-btn" id="musicToggleBtn">
+                    <i class="fas fa-music"></i>
+                </button>
+                <a href="login.html" class="login-btn">Login</a>
+            </div>
+        </div>
+    </header>
+
+  
+
+
+
+    <!-- Animated Audio Player -->
+    <div class="music-player-wrapper" id="musicPlayer">
+        <div class="music-player-container">
+            <div class="player-visualizer">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+            </div>
+            
+            
+
+            <div class="player-controls">
+               
+                <button class="control-btn play-btn" id="playBtn">
+                    <i class="fas fa-play"></i>
+                </button>
+                
+            </div>
+
+            <div class="player-progress">
+                <span class="time current-time">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                    <div class="progress-handle" id="progressHandle"></div>
+                </div>
+                <span class="time total-time">3:45</span>
+            </div>
+
+            <div class="player-volume">
+                <i class="fas fa-volume-up"></i>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+            </div>
+
+            <button class="player-close" id="playerClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <audio id="audioElement" loop >
+            <source src="assets/relaxing-music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <section class="hero-section" id="heroSection">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles"></i>
+                    <span>Welcome to the Future of Learning</span>
+                </div>
+                <h1 class="hero-title">
+                    Master Your Studies with
+                    <span class="gradient-text">Nerdz</span>
+                </h1>
+                <p class="hero-description">
+                    Unlock your potential with AI-powered study tools, interactive 3D visualizations,
+                    and personalized learning paths designed to help you excel in every subject.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">
+                        <span>Get Started</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>50K+</h3>
+                        <p>Active Learners</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100+</h3>
+                        <p>Courses</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4.9★</h3>
+                        <p>User Rating</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-3d" id="hero3d">
+                <div class="scene-3d">
+                    <div class="floating-card card-1" data-speed="2">
+                        <div class="card-content">
+                            <i class="fas fa-book"></i>
+                            <h4>Learn</h4>
+                            <p>Interactive Lessons</p>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-2" data-speed="3">
+                        <div class="card-content">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Achieve</h4>
+                            <p>Get Certified</p>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-3" data-speed="1.5">
+                        <div class="card-content">
+                            <i class="fas fa-brain"></i>
+                            <h4>Master</h4>
+                            <p>AI Powered</p>
+                        </div>
+                    </div>
+
+                    <div class="central-model">
+                        <div class="model-ring ring-1"></div>
+                        <div class="model-ring ring-2"></div>
+                        <div class="model-ring ring-3"></div>
+                        <div class="model-core">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                    </div>
+
+                    <div class="floating-elements">
+                        <div class="element element-1">📚</div>
+                        <div class="element element-2">✨</div>
+                        <div class="element element-3">🎯</div>
+                        <div class="element element-4">💡</div>
+                        <div class="element element-5">🚀</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <div class="section-bg-pattern"></div>
+        <div class="features-container">
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2 class="section-title">Everything You Need to Succeed</h2>
+                <p class="section-description">Powerful features designed to make studying engaging and effective</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Assistant</h3>
+                    <p>Get instant help with your doubts and personalized study recommendations</p>
+                </div>
+
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Customizable Interface</h3>
+                    <p>Make it yours with themes, colors, and layouts that match your vibe</p>
+                </div>
+
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Progress Tracking</h3>
+                    <p>Visualize your improvement with detailed analytics and test history</p>
+                </div>
+
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Lofi Music Player</h3>
+                    <p>Study with curated playlists designed to boost your concentration</p>
+                </div>
+
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Smart Timers</h3>
+                    <p>Pomodoro technique, alarms, and reminders to keep you on track</p>
+                </div>
+
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Rewards System</h3>
+                    <p>Earn badges and achievements to stay motivated and engaged</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="audience-section" id="audience">
+        <div class="audience-container">
+            <div class="section-header">
+                <span class="section-badge">Built For You</span>
+                <h2 class="section-title">Built for Students & Teachers</h2>
+                <p class="section-description">Two powerful experiences, one amazing platform</p>
+            </div>
+
+            <div class="audience-cards">
+                <div class="audience-card student-card">
+                    <div class="card-icon">
+                        🎓
+                    </div>
+                    <h3>For Students</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Access unlimited study materials</li>
+                        <li><i class="fas fa-check"></i> Create personal notes & mind maps</li>
+                        <li><i class="fas fa-check"></i> Take tests and track your scores</li>
+                        <li><i class="fas fa-check"></i> Get study tips and motivation</li>
+                        <li><i class="fas fa-check"></i> Connect with your teachers</li>
+                    </ul>
+                    <button class="cta-btn primary-btn">
+                        Sign Up as Student
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="audience-card teacher-card">
+                    <div class="card-icon">
+                        👨‍🏫
+                    </div>
+                    <h3>For Teachers</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Upload & organize study materials</li>
+                        <li><i class="fas fa-check"></i> Schedule tests and quizzes</li>
+                        <li><i class="fas fa-check"></i> Monitor student progress</li>
+                        <li><i class="fas fa-check"></i> Create personalized timetables</li>
+                        <li><i class="fas fa-check"></i> Connect with students easily</li>
+                    </ul>
+                    <button class="cta-btn secondary-btn">
+                        Sign Up as Teacher
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="cta">
+        <div class="cta-bg-pattern"></div>
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Study Game?</h2>
+                <p class="cta-description">Join thousands of students already studying smarter with NerdZ</p>
+                <button class="cta-button">
+                    Get Started Free
+                    <i class="fas fa-rocket"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="img/logo.jpeg" alt="nerdz-logo">
+                        <h3>NerdZ</h3>
+                    </div>
+                    <p>Making study easier and more engaging for students worldwide.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="#">Features</a>
+                    <a href="#">How it Works</a>
+                    <a href="#">Pricing</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Community</h4>
+                    <a href="#">GitHub</a>
+                    <a href="#">Discord</a>
+                    <a href="#">Twitter</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <a href="#">Documentation</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 NerdZ. Study Smarter, Not Harder  .</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-actions">
+        <button class="fab theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="fab menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="music-player.js"></script>
+     
+</body>
+
+</html>
